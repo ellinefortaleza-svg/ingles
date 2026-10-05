@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Meu inglês: viagem e Canadá</title>
+<meta name="theme-color" content="#14254A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF3F8;--card:#FFFFFF;--ink:#14254A;--muted:#5A6A84;--line:#D3DDE9;--soft:#E3EBF4;
+  --maple:#C8102E;--gold:#F2B705;--stamp:#1F7A55;--navy:#14254A;
+  --fh:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --fb:'Atkinson Hyperlegible',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#0D1830;--card:#15244A;--ink:#EAF0F9;--muted:#A3B2CB;--line:#2A3D66;--soft:#1C2E58;--stamp:#3FB27F;}
+}
+:root[data-theme="dark"]{--paper:#0D1830;--card:#15244A;--ink:#EAF0F9;--muted:#A3B2CB;--line:#2A3D66;--soft:#1C2E58;--stamp:#3FB27F;}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+html,body{margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--paper);color:var(--ink);font:17px/1.55 var(--fb);padding-bottom:calc(80px + env(safe-area-inset-bottom,0px));-webkit-text-size-adjust:100%}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1,h2,h3{font-family:var(--fh);line-height:1.15;margin:0 0 .35em;font-weight:800}
+h2{font-size:1.55rem}
+h3{font-size:1.12rem;font-weight:600}
+p{margin:0 0 .6em}
+.muted{color:var(--muted)} .small{font-size:.88rem}
+button{font:inherit;cursor:pointer;color:inherit}
+input,textarea,select{font:inherit;color:var(--ink)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+.pass{background:var(--navy);color:#fff;border-radius:18px;display:grid;grid-template-columns:1fr auto;position:relative;overflow:hidden;margin-top:4px}
+.pass.ca .stub{background:#1F7A55}
+.pass .main{padding:18px 20px 16px;min-width:0}
+.pass .stub{background:var(--maple);padding:18px 16px 16px;text-align:center;min-width:118px;display:flex;flex-direction:column;justify-content:center;border-left:2px dashed rgba(255,255,255,.55)}
+.pass::before,.pass::after{content:"";position:absolute;width:22px;height:22px;border-radius:50%;background:var(--paper);right:107px}
+.pass::before{top:-11px}.pass::after{bottom:-11px}
+.route{font-family:var(--fh);font-weight:800;font-size:clamp(1.45rem,5.5vw,2.2rem);line-height:1.05;display:flex;align-items:center;gap:.35em;flex-wrap:wrap}
+.route .plane{font-size:.7em;color:var(--gold)}
+.fields{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:4px 20px;margin-top:12px;font-size:.82rem}
+.fields span{display:block;opacity:.7}
+.fields b{font-size:1rem}
+.days{font-family:var(--fh);font-weight:800;font-size:2.7rem;line-height:1}
+.stub small{display:block;font-size:.78rem;opacity:.92;line-height:1.25;margin-top:4px}
+.runway{grid-column:1/-1;padding:0 20px 16px}
+.bar{height:8px;background:rgba(255,255,255,.18);border-radius:8px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--gold);border-radius:8px}
+.runway p{font-size:.8rem;margin:6px 0 0;opacity:.85}
+
+nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:10;background:var(--card);border-top:1px solid var(--line);display:flex;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0px)}
+nav.tabs button{flex:1;max-width:140px;background:none;border:0;padding:9px 4px 8px;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:1px;font-size:.76rem}
+nav.tabs .i{font-size:1.3rem;line-height:1.2}
+nav.tabs button[aria-current="true"]{color:var(--maple);font-weight:700}
+
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:14px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin:18px 0 4px}
+.quote{font-family:var(--fh);font-weight:600;font-size:1.18rem;line-height:1.35;border-left:4px solid var(--gold);padding:2px 0 2px 14px;margin:0}
+.btn{background:var(--maple);color:#fff;border:0;border-radius:10px;padding:11px 18px;font-weight:700}
+.btn.ghost{background:var(--soft);color:var(--ink)}
+.btn.green{background:var(--stamp)}
+.btn.sm{padding:7px 12px;font-size:.9rem}
+.btn:disabled{opacity:.5;cursor:default}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.seg{display:inline-flex;background:var(--soft);border-radius:10px;padding:3px;gap:3px;margin:6px 0 4px;flex-wrap:wrap}
+.seg button{border:0;background:none;padding:7px 14px;border-radius:8px;font-weight:700;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--card);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+
+.task{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--line)}
+.task:first-of-type{border-top:0}
+.check{flex:none;width:32px;height:32px;border-radius:50%;border:2px solid var(--line);background:none;display:grid;place-items:center;color:transparent;font-weight:700;margin-top:1px}
+.check.on{background:var(--stamp);border-color:var(--stamp);color:#fff}
+.check.static{cursor:default}
+.tbody{flex:1;min-width:0}
+.tbody h3{margin-bottom:.15em}
+.mini{display:flex;gap:8px;align-items:center;font-size:.88rem;color:var(--muted);margin-top:6px;flex-wrap:wrap}
+.mini input{width:110px;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}
+.mini input.wide{width:min(100%,280px)}
+textarea{width:100%;min-height:120px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--paper);line-height:1.5;resize:vertical}
+.note{background:var(--soft);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:.95rem}
+.fbtext{white-space:pre-wrap;background:var(--soft);border-radius:10px;padding:12px 14px;margin-top:10px;font-size:.95rem}
+.timer{font-family:var(--fh);font-weight:800;font-size:2.4rem;line-height:1;margin:6px 0}
+
+.phrase{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:10px 0;border-top:1px dashed var(--line);align-items:center}
+.phrase .en{font-weight:700;font-size:1.08rem}
+.phrase .pt{color:var(--muted);font-size:.95rem;grid-column:1}
+.phrase .say{grid-row:1/3;grid-column:2;display:flex;gap:6px}
+.sbtn{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--soft);font-size:1.05rem}
+.banner{background:var(--gold);color:#14254A;border:0}
+.banner .btn{background:#14254A}
+
+.stampbox{display:flex;align-items:center;gap:16px}
+.stamp{flex:none;width:86px;height:86px;border-radius:50%;border:3px solid var(--stamp);color:var(--stamp);display:grid;place-items:center;font-family:var(--fh);font-weight:800;font-size:.8rem;text-align:center;line-height:1.1;transform:rotate(-12deg)}
+.stamp.pop{animation:pop .55s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pop{0%{transform:scale(1.8) rotate(-30deg);opacity:0}100%{transform:scale(1) rotate(-12deg);opacity:1}}
+
+.week{margin:18px 0 6px}
+.week p{margin:0 0 6px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.dow{font-size:.72rem;color:var(--muted);text-align:center}
+.day{position:relative;aspect-ratio:1/1.05;border-radius:10px;border:1px solid var(--line);background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2px;min-width:0}
+.day .n{font-weight:700;font-size:1rem;line-height:1.1}
+.day .l{font-size:.62rem;color:var(--muted);line-height:1.1;text-align:center}
+.day.future{opacity:.6}
+.day.today{border:2px solid var(--maple)}
+.day.trip{opacity:1;background:var(--maple);color:#fff;border-color:var(--maple)}
+.day.trip .l{color:#fff}
+.day.done{background:rgba(31,122,85,.12);border-color:var(--stamp)}
+.day.done::after{content:"✓";position:absolute;top:3px;right:5px;color:var(--stamp);font-weight:700;font-size:.8rem}
+.dots{display:flex;gap:3px;margin-top:2px}
+.dots i{width:5px;height:5px;border-radius:50%;background:var(--line)}
+.dots i.on{background:var(--stamp)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.82rem;color:var(--muted)}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.stat b{font-family:var(--fh);font-size:1.6rem;display:block;line-height:1.1}
+.stat span{font-size:.85rem;color:var(--muted)}
+.lvl .bar{background:var(--soft);margin-top:8px}
+.lvl .bar i{background:var(--maple)}
+.tlist .item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.tlist .item:first-child{border-top:0}
+.score{font-family:var(--fh);font-weight:800;font-size:1.2rem}
+.good{color:var(--stamp)} .bad{color:var(--maple)}
+details{border-top:1px solid var(--line);padding:8px 0}
+details summary{cursor:pointer;font-weight:700;padding:4px 0}
+.search{width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);margin:6px 0 4px}
+.settings label,.ielts label{display:block;margin:10px 0 4px;font-size:.9rem;color:var(--muted)}
+.settings input{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}
+.ielts .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.ielts select,.ielts input{width:100%;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}
+
+.modal{position:fixed;inset:0;z-index:30;background:rgba(8,16,34,.6);display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:var(--card);width:100%;max-width:620px;max-height:94vh;overflow:auto;border-radius:18px 18px 0 0;padding:20px 20px calc(22px + env(safe-area-inset-bottom,0px))}
+@media (min-width:700px){.modal{align-items:center}.sheet{border-radius:18px}}
+.qtop{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.prog{display:flex;gap:3px;flex:1;margin-right:12px}
+.prog i{flex:1;height:6px;border-radius:6px;background:var(--soft)}
+.prog i.ok{background:var(--stamp)} .prog i.no{background:var(--maple)} .prog i.cur{background:var(--gold)}
+.close{background:none;border:0;font-size:1.5rem;line-height:1;color:var(--muted)}
+.qtype{font-size:.88rem;color:var(--muted);margin-bottom:4px}
+.qtext{font-family:var(--fh);font-weight:800;font-size:1.45rem;line-height:1.2;margin:4px 0 12px}
+.opt{display:block;width:100%;text-align:left;padding:13px 14px;margin:8px 0;border-radius:10px;border:2px solid var(--line);background:var(--card)}
+.opt.right{border-color:var(--stamp);background:rgba(31,122,85,.13)}
+.opt.wrong{border-color:var(--maple);background:rgba(200,16,46,.1)}
+.fb{min-height:1.6em;font-weight:700;margin:8px 0}
+.big{font-family:var(--fh);font-weight:800;font-size:3.4rem;line-height:1}
+.toast{position:fixed;left:50%;top:calc(12px + env(safe-area-inset-top,0px));transform:translateX(-50%);z-index:40;background:var(--navy);color:#fff;padding:12px 16px;border-radius:12px;max-width:min(92vw,520px);box-shadow:0 8px 24px rgba(0,0,0,.25);font-size:.95rem}
+.hidden{display:none!important}
+@media (min-width:760px){nav.tabs{position:sticky;top:0;bottom:auto;border-top:0;border-bottom:1px solid var(--line)}body{padding-bottom:30px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<nav class="tabs" aria-label="Seções">
+  <button data-act="view" data-v="hoje"><span class="i" aria-hidden="true">📅</span>Hoje</button>
+  <button data-act="view" data-v="plano"><span class="i" aria-hidden="true">🗺️</span>Cronograma</button>
+  <button data-act="view" data-v="testes"><span class="i" aria-hidden="true">📝</span>Testes</button>
+  <button data-act="view" data-v="evolucao"><span class="i" aria-hidden="true">📈</span>Evolução</button>
+  <button data-act="view" data-v="conteudo"><span class="i" aria-hidden="true">📚</span>Conteúdo</button>
+</nav>
+<div class="wrap">
+  <header id="pass"></header>
+  <main id="main"></main>
+</div>
+<div id="modal"></div>
+<div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+<script>
+const START='2026-10-05';
+const KEY='ingles-viagem-v1';
+
+/* ================= TRILHA 1: VIAGEM ================= */
+const WEEKS=[{t:'O básico',e:'👋'},{t:'Aeroporto e imigração',e:'🛂'},{t:'Hotel e transporte',e:'🏨'},{t:'Comida e bebida',e:'🍽️'},{t:'Cidade e compras',e:'🛍️'},{t:'Conversa, frio e emergências',e:'🧣'}];
+const L=(w,t,k,p)=>({w,t,k,p});
+const LESSONS=[
+L(0,'Cumprimentos','greetings',[['Hello! / Hi!','Olá! / Oi!'],['Good morning','Bom dia'],['Good afternoon','Boa tarde'],['How are you?','Como vai você?'],["I'm fine, thank you","Estou bem, obrigada"]]),
+L(0,'Apresentações','introducing yourself',[['My name is Elline','Meu nome é Elline'],["I'm from Brazil",'Sou do Brasil'],['Nice to meet you','Prazer em conhecer'],["What's your name?",'Qual é o seu nome?'],["I'm here on vacation",'Estou aqui de férias']]),
+L(0,'Palavras mágicas','polite words',[['Please','Por favor'],['Thank you very much','Muito obrigada'],["You're welcome",'De nada'],['Excuse me','Com licença'],["I'm sorry",'Desculpe']]),
+L(0,'Quando eu não entendo','asking someone to repeat',[["I don't understand",'Não entendo'],['Can you repeat, please?','Pode repetir, por favor?'],['Can you speak slowly?','Pode falar devagar?'],['Do you speak Portuguese?','Você fala português?'],['I speak a little English','Falo um pouco de inglês']]),
+L(0,'Números e preços','numbers and prices',[['How much is it?','Quanto custa?'],['Ten dollars','Dez dólares'],['Twenty-five','Vinte e cinco'],['One hundred','Cem'],["It's too expensive",'Está muito caro']]),
+L(0,'Horas e dias','telling the time',[['What time is it?','Que horas são?'],["It's three o'clock",'São três horas'],['Today','Hoje'],['Tomorrow','Amanhã'],['See you later!','Até mais tarde!']]),
+L(1,'Check-in no aeroporto','airport check-in',[['Where is the check-in counter?','Onde fica o balcão de check-in?'],['Here is my passport','Aqui está meu passaporte'],['I have one bag to check','Tenho uma mala para despachar'],['Window or aisle?','Janela ou corredor?'],['Aisle seat, please','Assento no corredor, por favor']]),
+L(1,'Portão de embarque','boarding gate',[['Where is gate twelve?','Onde fica o portão doze?'],['Is the flight on time?','O voo está no horário?'],['The flight is delayed','O voo está atrasado'],['Boarding pass, please','Cartão de embarque, por favor'],['Is this the line for boarding?','Esta é a fila do embarque?']]),
+L(1,'Dentro do avião','on the plane',[['Can I have some water?','Pode me dar uma água?'],['Chicken or pasta?','Frango ou massa?'],['Chicken, please','Frango, por favor'],['Can I have a blanket?','Pode me dar um cobertor?'],['Where is the restroom?','Onde fica o banheiro?']]),
+L(1,'Imigração','immigration interview',[['What is the purpose of your visit?','Qual é o objetivo da sua visita?'],["Tourism. I'm here on vacation",'Turismo. Estou aqui de férias'],['How long will you stay?','Quanto tempo vai ficar?'],['Ten days','Dez dias'],['Where are you staying?','Onde você vai ficar hospedada?']]),
+L(1,'Imigração (parte 2)','customs',[["I'm staying at a hotel downtown",'Vou ficar num hotel no centro'],["It's my birthday trip",'É minha viagem de aniversário'],["I'm traveling with my partner",'Estou viajando com minha parceira'],['Do you have anything to declare?','Tem algo a declarar?'],['No, nothing to declare','Não, nada a declarar']]),
+L(1,'Bagagem e saída','baggage claim',[['Where is the baggage claim?','Onde fica a esteira de bagagens?'],['My bag is missing','Minha mala sumiu'],['This is my suitcase','Esta é a minha mala'],['Where can I get a taxi?','Onde pego um táxi?'],['Where is the exit?','Onde fica a saída?']]),
+L(2,'Check-in no hotel','hotel check-in',[['I have a reservation','Tenho uma reserva'],['Under the name Freitas','No nome Freitas'],['What time is check-out?','Que horas é o check-out?'],['Is breakfast included?','O café da manhã está incluso?'],["What's the Wi-Fi password?",'Qual é a senha do Wi-Fi?']]),
+L(2,'Problemas no quarto','hotel problems',[["The heater doesn't work",'O aquecedor não funciona'],['Can I have more towels?','Pode me dar mais toalhas?'],['The room is too cold','O quarto está muito frio'],['Can you help me?','Pode me ajudar?'],['I lost my key card','Perdi o cartão do quarto']]),
+L(2,'Metrô','subway',[['Where is the subway station?','Onde fica a estação de metrô?'],['One ticket, please','Uma passagem, por favor'],['Which line goes to Union Station?','Qual linha vai para a Union Station?'],['Next stop','Próxima parada'],['Does this train go downtown?','Este trem vai para o centro?']]),
+L(2,'Táxi e Uber','taking a taxi',[['Please take me to this address','Por favor, me leve a este endereço'],['How long does it take?','Quanto tempo demora?'],['Stop here, please','Pare aqui, por favor'],['Can I pay by card?','Posso pagar com cartão?'],['Keep the change','Pode ficar com o troco']]),
+L(2,'Ônibus e bonde','taking the bus',[['Does this bus go to the CN Tower?','Este ônibus vai para a CN Tower?'],['Where do I get off?','Onde eu desço?'],['Is this seat free?','Este lugar está livre?'],['I want to go to the museum','Quero ir para o museu'],['Where can I buy a Presto card?','Onde compro um cartão Presto?']]),
+L(2,'Horários e distâncias','asking for directions',[['When does it open?','Quando abre?'],['It closes at six','Fecha às seis'],['Is it far from here?','É longe daqui?'],["It's a ten-minute walk",'São dez minutos a pé'],["Let's go!",'Vamos!']]),
+L(3,'Na cafeteria','coffee shop',[['A medium coffee, please','Um café médio, por favor'],['With milk, no sugar','Com leite, sem açúcar'],['For here or to go?','Para comer aqui ou para viagem?'],['To go, please','Para viagem, por favor'],['Can I have a muffin?','Pode me dar um muffin?']]),
+L(3,'Chegando no restaurante','at the restaurant',[['A table for two, please','Uma mesa para dois, por favor'],['Can I see the menu?','Posso ver o cardápio?'],['What do you recommend?','O que você recomenda?'],["I'm ready to order",'Estou pronta para pedir'],['Water, please','Água, por favor']]),
+L(3,'Fazendo o pedido','ordering food',[["I'd like the salmon",'Eu gostaria do salmão'],['No onions, please','Sem cebola, por favor'],['Is it spicy?','É apimentado?'],['Does it have meat?','Tem carne?'],['The same for me','O mesmo para mim']]),
+L(3,'Conta e gorjeta','paying the bill',[['Can I have the check, please?','A conta, por favor?'],['Can we split the bill?','Podemos dividir a conta?'],['Is the tip included?','A gorjeta está inclusa?'],['It was delicious!','Estava delicioso!'],['Have a nice day!','Tenha um bom dia!']]),
+L(3,'Bebidas e brinde','drinks',[['A glass of red wine, please','Uma taça de vinho tinto, por favor'],['A beer, please','Uma cerveja, por favor'],['A hot chocolate','Um chocolate quente'],['Cheers!','Saúde!'],["It's my birthday!",'É meu aniversário!']]),
+L(3,'Fast food e mercado','grocery store',[['Where can I find the bread?','Onde encontro o pão?'],['A number two combo, please','Um combo número dois, por favor'],['Can I get a bag?','Pode me dar uma sacola?'],['Do you have gluten-free options?','Tem opções sem glúten?'],["That's all, thanks",'É só isso, obrigada']]),
+L(4,'Pedindo direções','giving directions',[['Where is the bank?','Onde fica o banco?'],['Turn left','Vire à esquerda'],['Turn right','Vire à direita'],['Go straight ahead','Siga em frente'],["It's on the corner",'Fica na esquina']]),
+L(4,'Me perdi','getting lost',[['Is it near here?','É perto daqui?'],['Across the street','Do outro lado da rua'],['Next to the hotel','Ao lado do hotel'],['Can you show me on the map?','Pode me mostrar no mapa?'],["I'm lost",'Estou perdida']]),
+L(4,'Comprando roupas','clothes shopping',[['Can I try this on?','Posso experimentar?'],['Where is the fitting room?','Onde fica o provador?'],['Do you have a smaller size?','Tem um tamanho menor?'],['Do you have this in black?','Tem este em preto?'],["I'll take it",'Vou levar']]),
+L(4,'Pagamento','paying in a store',[['Cash or card?','Dinheiro ou cartão?'],['Card, please','Cartão, por favor'],['Can I get a receipt?','Pode me dar o recibo?'],['Is tax included?','O imposto está incluso?'],['Is there a discount?','Tem desconto?']]),
+L(4,'Passeios','sightseeing',[['Two tickets, please','Dois ingressos, por favor'],['Can you take a picture of us?','Pode tirar uma foto nossa?'],['What time does the tour start?','Que horas começa o passeio?'],['Where is the entrance?','Onde fica a entrada?'],['This is beautiful!','Isto é lindo!']]),
+L(4,'Trocas e imprevistos','returning items',[['I want to return this','Quero devolver isto'],["It doesn't fit",'Não serviu'],["My card didn't work",'Meu cartão não passou'],['Can you try again?','Pode tentar de novo?'],['Where is the ATM?','Onde fica o caixa eletrônico?']]),
+L(5,'Puxando conversa','small talk',[['Where are you from?','De onde você é?'],['I love it here!','Estou adorando aqui!'],["It's my first time in Canada",'É minha primeira vez no Canadá'],['What do you do?','O que você faz?'],['I work in HR and finance','Trabalho com RH e financeiro']]),
+L(5,'Falando do frio','weather',[["It's so cold today!",'Está muito frio hoje!'],['Is it going to snow?','Vai nevar?'],['I need a warm jacket','Preciso de um casaco quente'],['Gloves and a hat','Luvas e um gorro'],["What's the temperature?",'Qual é a temperatura?']]),
+L(5,'Farmácia','at the pharmacy',[['Where is the pharmacy?','Onde fica a farmácia?'],['I have a headache','Estou com dor de cabeça'],['I have a cold','Estou resfriada'],['Do I need a prescription?','Preciso de receita?'],['Something for a sore throat','Algo para dor de garganta']]),
+L(5,'Emergências','emergencies',[['Help!','Socorro!'],['Call 911!','Ligue para o 911!'],['I need a doctor','Preciso de um médico'],['I lost my passport','Perdi meu passaporte'],['Where is the police station?','Onde fica a delegacia?']]),
+L(5,'Celular e internet','phone and internet',[['Can I charge my phone here?','Posso carregar meu celular aqui?'],['Do you have Wi-Fi?','Vocês têm Wi-Fi?'],['My phone is dead','Meu celular descarregou'],['Can you write it down?','Pode escrever para mim?'],["What's your Instagram?",'Qual é o seu Instagram?']]),
+L(5,'Despedidas e gentilezas','saying goodbye',[['Have a great day!','Tenha um ótimo dia!'],['It was nice talking to you','Foi bom conversar com você'],['Enjoy!','Aproveite!'],['Take care!','Se cuida!'],['Goodbye! See you!','Tchau! Até mais!']])
+];
+const PODCASTS=[{n:'Coffee Break English',d:'Episódios curtos, explicados com calma.'},{n:'ESL Pod',d:'Diálogos do dia a dia lidos devagar e explicados.'},{n:'BBC Learning English: 6 Minute English',d:'Seis minutos com vocabulário destacado.'},{n:'LearnEnglish Podcasts (British Council)',d:'Situações reais para iniciantes.'}];
+
+/* ================= TRILHA 2: CANADÁ ================= */
+const PHASES=[
+  {n:'Fase 1: Fundamentos (A2)',s:0,e:12,lvl:'A2',
+   pods:[{n:'ESL Pod',d:'Diálogos lentos e explicados.'},{n:'Coffee Break English',d:'Aulas curtas e progressivas.'},{n:'LearnEnglish Podcasts (British Council)',d:'Situações do dia a dia.'}],
+   read:'News in Levels (níveis 1 e 2) ou VOA Learning English. Leia 1 notícia curta, primeiro sem dicionário, depois procurando só as palavras-chave.'},
+  {n:'Fase 2: Inglês funcional e de trabalho (B1)',s:12,e:28,lvl:'B1',
+   pods:[{n:'BBC Learning English: 6 Minute English',d:'Vocabulário atual em 6 minutos.'},{n:'All Ears English',d:'Inglês natural do dia a dia e do trabalho.'},{n:'ESL Pod',d:'Diálogos explicados.'}],
+   read:'BBC Learning English (News Review) ou VOA Learning English. Leia 1 texto e resuma a ideia principal em 2 frases.'},
+  {n:'Fase 3: Inglês profissional (B2)',s:28,e:44,lvl:'B2',
+   pods:[{n:'Business English Pod',d:'Reuniões, negociação e e-mails.'},{n:'BBC Learning English: 6 Minute English',d:'Bom para manter o ritmo.'},{n:'HBR IdeaCast',d:'Gestão e liderança em inglês nativo.'}],
+   read:'CBC News (seção Business ou Canada) e artigos da CPHR BC & Yukon. Leia 1 artigo e anote as expressões de trabalho.'},
+  {n:'Fase 4: Preparação para o IELTS',s:44,e:56,lvl:'B2 / IELTS',
+   pods:[{n:'IELTS Energy (All Ears English)',d:'Estratégias e exemplos de Speaking e Writing.'},{n:'Business English Pod',d:'Mantém o inglês profissional ativo.'}],
+   read:'Testes gratuitos de prática do British Council ou da IDP (IELTS General Training Reading). Faça 1 seção cronometrada e corrija.'}
+];
+const C=(g,ge,gx,v,vw,wp,sp)=>({g,ge,gx,v,vw,wp,sp});
+const CUR=[
+C('Verbo to be (am / is / are)','Usado para dizer quem você é, como está e onde está: I am, you are, he/she/it is, we/they are.',[['I am a lawyer','Eu sou advogada'],['She is my partner','Ela é minha parceira']],'Profissões e trabalho',[['lawyer','advogado(a)'],['accountant','contador(a)'],['manager','gerente'],['HR (Human Resources)','RH (Recursos Humanos)'],['company','empresa'],['employee','funcionário(a)']],'Write 5 sentences about you and your job. Example: I am a manager.','Introduce yourself for 1 minute: your name, city and job.'),
+C('Presente simples (rotina)','Para hábitos e rotina. Com he/she/it o verbo ganha -s (she works). Negativa: don\'t / doesn\'t.',[['I work from Monday to Friday','Eu trabalho de segunda a sexta'],["She doesn't drink coffee",'Ela não toma café']],'Rotina',[['wake up','acordar'],['commute','trajeto até o trabalho'],['meeting','reunião'],['lunch break','horário de almoço'],['schedule','agenda / horário'],['weekend','fim de semana']],'Describe your daily routine in 6 sentences.','Talk about a typical weekday for 1 minute.'),
+C('Perguntas com do / does','Para perguntar no presente: Do you…? Does she…? Com palavra interrogativa: Where do you live?',[['Do you work here?','Você trabalha aqui?'],['Where does she live?','Onde ela mora?']],'Casa e família',[['partner','parceiro(a)'],['relatives','parentes'],['apartment','apartamento'],['neighbourhood','bairro'],['move','mudar(-se)'],['pet','animal de estimação']],'Write 5 questions to ask a new colleague.','Answer: Where do you live? Who do you live with? Do you have pets?'),
+C('There is / there are','Para dizer que algo existe: there is (singular), there are (plural).',[['There is a pharmacy near my home','Tem uma farmácia perto de casa'],['There are many parks in Vancouver','Há muitos parques em Vancouver']],'Na cidade',[['downtown','centro'],['grocery store','supermercado'],['bus stop','ponto de ônibus'],['rent','aluguel'],['crowded','lotado'],['quiet','tranquilo']],'Describe your neighbourhood using there is / there are.','Describe your city for 1 minute.'),
+C("Can / can't","Para habilidade e pedidos: I can speak Portuguese. Can you help me?",[['I can organize the payroll','Eu sei organizar a folha de pagamento'],["I can't speak French",'Eu não sei falar francês']],'Habilidades',[['skills','habilidades'],['solve problems','resolver problemas'],['teamwork','trabalho em equipe'],['negotiate','negociar'],['organized','organizado(a)'],['reliable','confiável']],'Write 5 things you can do well at work.','What can you do well? Talk for 1 minute.'),
+C('Presente contínuo','Para o que está acontecendo agora ou nesta fase da vida: I am studying English this year.',[["I'm studying English every day",'Estou estudando inglês todo dia'],["We're planning to move to Canada",'Estamos planejando nos mudar para o Canadá']],'Estudos e metas',[['goal','meta'],['improve','melhorar'],['practice','praticar'],['course','curso'],['progress','progresso'],['fluent','fluente']],'What are you doing these days to improve your English?','Talk about your English goals.'),
+C('Passado do to be (was / were)','I/he/she/it was; you/we/they were. Negativa: wasn\'t, weren\'t.',[['The trip was amazing','A viagem foi incrível'],['The streets were very cold','As ruas estavam muito frias']],'Clima e estações',[['weather','tempo / clima'],['snow','neve'],['freezing','congelante'],['season','estação do ano'],['forecast','previsão do tempo'],['layers','camadas de roupa']],'Describe the weather on your trip.','How was your trip? Talk for 1 minute.'),
+C('Passado simples (regulares)','Verbos regulares ganham -ed: work → worked, visit → visited. Negativa: didn\'t + verbo.',[['We visited a beautiful museum','Visitamos um museu lindo'],["I didn't understand everything",'Eu não entendi tudo']],'Contando uma viagem',[['booked','reservei'],['enjoyed','aproveitei / gostei'],['flight','voo'],['luggage','bagagem'],['sightseeing','passeios turísticos'],['experience','experiência']],'Write about your trip in 8 sentences.','Tell the story of your best day on the trip.'),
+C('Passado simples (irregulares)','Alguns verbos mudam totalmente: go → went, have → had, see → saw, buy → bought.',[['I went to the office early','Fui cedo para o escritório'],['We bought warm clothes','Compramos roupas quentes']],'Verbos irregulares do dia a dia',[['went','fui / foi'],['had','tive / teve'],['made','fiz / fez'],['took','peguei / levei'],['met','conheci / encontrei'],['spent','gastei / passei (tempo)']],'What did you do last weekend?','Talk about last weekend for 1 minute.'),
+C('Some / any, much / many','Many com contáveis (many apples), much com incontáveis (much money). Some em afirmativas, any em perguntas e negativas.',[['How much does it cost?','Quanto custa?'],["We don't have any milk",'Não temos leite']],'Supermercado',[['groceries','compras de mercado'],['a loaf of bread','um pão (de forma)'],['a dozen eggs','uma dúzia de ovos'],['on sale','em promoção'],['checkout','caixa'],['receipt','recibo / nota']],'Write your weekly shopping list and 4 sentences about it.','Describe your favourite meal.'),
+C('Comparativos','Adjetivos curtos: -er (cheaper). Longos: more (more expensive). Than = do que.',[['Vancouver is colder than my city','Vancouver é mais fria que a minha cidade'],['Rent is more expensive downtown','O aluguel é mais caro no centro']],'Alugando apartamento',[['lease','contrato de aluguel'],['landlord','proprietário'],['utilities','contas (luz, água, gás)'],['furnished','mobiliado'],['damage deposit','caução'],['one-bedroom','apartamento de 1 quarto']],'Compare your city and Vancouver in 6 sentences.','Compare two places you know.'),
+C('Superlativos e revisão','Curtos: the -est (the cheapest). Longos: the most (the most beautiful).',[['It was the best trip of my life','Foi a melhor viagem da minha vida'],['This is the most important step','Este é o passo mais importante']],'Dando opinião',[['I think','Eu acho'],['in my opinion','na minha opinião'],['I agree','concordo'],['I disagree','discordo'],['because','porque'],['however','porém']],'What is the best city to live in? Give your opinion with reasons.','Is it better to live in a big city or a small town? Give your opinion.'),
+C('Futuro com going to','Para planos já decididos: I am going to study for the IELTS.',[["We're going to move to Vancouver",'Vamos nos mudar para Vancouver'],["I'm going to look for a job in HR",'Vou procurar emprego em RH']],'Mudança para o Canadá',[['relocate','mudar-se de país ou cidade'],['work permit','permissão de trabalho'],['settle in','se estabelecer'],['newcomer','recém-chegado(a)'],['SIN (Social Insurance Number)','número de seguro social'],['paperwork','papelada']],'Write about your plans for your first month in Canada.','What are you going to do when you arrive in Canada?'),
+C('Futuro com will','Para decisões na hora, promessas e previsões: I will call you back.',[["I'll send you my résumé today",'Vou te mandar meu currículo hoje'],['It will be a great experience','Vai ser uma ótima experiência']],'Procurando emprego',[['job posting','anúncio de vaga'],['apply for','candidatar-se a'],['résumé','currículo'],['cover letter','carta de apresentação'],['hiring','contratando'],['full-time','tempo integral']],'Write a short message asking about a job opening.','Explain what kind of job you are looking for.'),
+C('Present perfect (experiência)','Para experiências e algo que começou no passado e continua: I have worked in HR for years.',[['I have worked in finance for years','Trabalho com finanças há anos'],["I've never lived abroad",'Nunca morei fora']],'Experiência profissional',[['responsible for','responsável por'],['in charge of','encarregada de'],['manage','gerenciar'],['achieve','alcançar / conquistar'],['background','formação / histórico'],['law degree','graduação em Direito']],'Write a professional summary for your résumé (5 sentences).','Interview question: Tell me about yourself.'),
+C('Present perfect x passado simples','Passado simples tem tempo definido (last year). Present perfect não tem tempo definido ou vem até hoje.',[['I started a new project last month','Comecei um projeto novo mês passado'],["I've handled many HR cases",'Já lidei com muitos casos de RH']],'Entrevista de emprego',[['strengths','pontos fortes'],['weaknesses','pontos fracos'],['challenge','desafio'],['deadline','prazo'],['reference','referência'],['team player','pessoa que trabalha bem em equipe']],'Answer in writing: What is your greatest strength?','Answer 3 interview questions: strengths, weaknesses and why Canada.'),
+C('Must, have to, should','Must / have to = obrigação. Should = conselho. Don\'t have to = não precisa.',[['Workers must wear safety boots','Os trabalhadores devem usar botas de segurança'],['You should report every incident','Você deveria relatar todo incidente']],'Segurança do trabalho',[['workplace safety','segurança do trabalho'],['hazard','risco / perigo'],['injury','lesão'],['PPE (personal protective equipment)','EPI'],['incident report','relatório de acidente'],['compliance','conformidade com as regras']],'Write 6 safety rules for a construction site.','Explain the safety rules at your workplace.'),
+C('Preposições in / on / at','At para horas e lugares exatos (at 9 am), on para dias (on Monday), in para meses, anos e lugares grandes (in June, in Canada).',[['The meeting is on Monday at 10','A reunião é segunda às 10'],['I was born in December','Nasci em dezembro']],'E-mails de trabalho',[["I'm writing to",'Escrevo para'],['Please find attached','Segue em anexo'],['Let me know','Me avise'],['follow up','dar seguimento'],['Best regards','Atenciosamente'],['as soon as possible','o quanto antes']],'Write an email asking your manager for a meeting.','Leave a 30-second voicemail for a colleague.'),
+C('Conectivos (and, but, so, because, although)','Ligam ideias: because = causa, so = consequência, but / although = contraste.',[['I was tired, but I studied','Estava cansada, mas estudei'],['Although it was cold, we went out','Embora estivesse frio, saímos']],'Finanças',[['invoice','fatura / nota fiscal'],['accounts payable','contas a pagar'],['accounts receivable','contas a receber'],['budget','orçamento'],['due date','vencimento'],['cash flow','fluxo de caixa']],'Explain your finance routine using 5 connectors.','Describe your main responsibilities at work.'),
+C('Adjetivos x advérbios','Adjetivo descreve o substantivo (a quick reply). Advérbio descreve o verbo (she replied quickly).',[['She explained it clearly','Ela explicou claramente'],['It was a clear explanation','Foi uma explicação clara']],'Reuniões',[['agenda','pauta'],['minutes','ata'],['action items','tarefas definidas'],['update','atualização'],['on the same page','alinhados'],['wrap up','encerrar']],'Write a meeting summary email with 3 action items.','Give a 1-minute update about a project.'),
+C('Condicional zero e primeira','Zero: verdades gerais. First: possibilidade real no futuro (If I pass the test, I will celebrate).',[['If I get the job, I will move in March','Se eu conseguir o emprego, me mudo em março'],['If you have questions, call me','Se tiver dúvidas, me ligue']],'Ao telefone',[['hold on','aguarde um momento'],['call back','retornar a ligação'],['put you through','transferir a ligação'],['extension','ramal'],['take a message','anotar um recado'],['speak up','falar mais alto']],'Write 6 sentences with if about your move.','Role-play: answer the phone at a company and take a message.'),
+C('Gerúndio e infinitivo','Alguns verbos pedem -ing (enjoy working), outros pedem to (want to work).',[['I enjoy helping people','Gosto de ajudar pessoas'],['I want to work in HR','Quero trabalhar em RH']],'Recursos Humanos (1)',[['recruitment','recrutamento'],['onboarding','integração de novos funcionários'],['payroll','folha de pagamento'],['benefits','benefícios'],['performance review','avaliação de desempenho'],['turnover','rotatividade']],'Describe a good onboarding process.','What do you enjoy about working in HR?'),
+C('Voz passiva','Foco na ação, não em quem faz: The report is sent every Friday. The employee was informed.',[['The employee was informed in writing','O funcionário foi informado por escrito'],['Salaries are paid monthly','Os salários são pagos mensalmente']],'Recursos Humanos (2)',[['disciplinary action','medida disciplinar'],['warning','advertência'],['termination','desligamento'],['policy','política / norma'],['grievance','reclamação formal'],['investigation','apuração']],'Describe a disciplinary process using the passive voice.','Explain how a disciplinary process works.'),
+C('Orações relativas (who, which, that)','Who para pessoas, which para coisas, that para os dois.',[['The manager who hired me is Canadian','O gerente que me contratou é canadense'],['This is the policy that changed','Esta é a política que mudou']],'Atendimento e reclamações',[['complaint','reclamação'],['refund','reembolso'],['issue','problema'],['apologize','pedir desculpas'],['resolve','resolver'],['customer satisfaction','satisfação do cliente']],'Reply to a customer complaint email.','Role-play: handle an unhappy client.'),
+C('Pedidos educados','Could you…? Would you mind + -ing? I was wondering if… são mais educados que Can you…?',[['Could you send me the file?','Você poderia me mandar o arquivo?'],['Would you mind checking this?','Você se importaria de conferir isto?']],'Educação no trabalho',[['I was wondering if','Eu queria saber se'],["I'd appreciate it if",'Eu agradeceria se'],['Thanks in advance','Desde já, obrigada'],['No worries','Sem problemas'],['Sorry for the delay','Desculpe a demora'],['Just a quick question','Só uma pergunta rápida']],'Write a polite email asking for a deadline extension.','Ask a colleague for help politely in 3 different ways.'),
+C('Used to','Para hábitos do passado que não acontecem mais: I used to live in a house.',[['I used to work only in Portuguese','Eu trabalhava só em português'],["We didn't use to plan our budget",'A gente não costumava planejar o orçamento']],'Vida no Canadá',[['chequing account','conta corrente'],['health card','cartão de saúde provincial'],['transit pass','passe de transporte'],['tax return','declaração de imposto'],['GST (sales tax)','imposto sobre vendas'],['neighbour','vizinho(a)']],'Write about how your life used to be and how it is now.','Talk about big changes in your life.'),
+C('Discurso indireto','Para contar o que alguém disse: She said (that) the meeting was cancelled.',[['My boss said the report was ready','Meu chefe disse que o relatório estava pronto'],['She asked if I could start on Monday','Ela perguntou se eu podia começar na segunda']],'Comunicação no trabalho',[['feedback','retorno / avaliação'],['clarify','esclarecer'],['point out','apontar'],['suggest','sugerir'],['confirm','confirmar'],['remind','lembrar alguém']],'Report a conversation you had with your manager.','Retell a conversation from this week.'),
+C('Phrasal verbs de trabalho','Verbo + partícula com sentido próprio. Aprenda em frases, não isolados.',[["I'll look into it",'Vou verificar isso'],['We need to figure out a solution','Precisamos encontrar uma solução']],'Phrasal verbs essenciais',[['set up','organizar / configurar'],['carry out','realizar'],['deal with','lidar com'],['figure out','descobrir / resolver'],['fill out','preencher (formulário)'],['look into','investigar / verificar']],'Write an email using 4 phrasal verbs.','Talk about a problem you solved at work.'),
+C('Segunda condicional','Situações hipotéticas: If I were the CEO, I would hire more people.',[['If I were in your position, I would accept','Se eu estivesse no seu lugar, aceitaria'],['What would you do if you lost a client?','O que você faria se perdesse um cliente?']],'Negociação',[['offer','oferta / proposta'],['counteroffer','contraproposta'],['compromise','meio-termo'],['terms','condições'],['agreement','acordo'],['salary range','faixa salarial']],'If you were the HR director of a big company, what would you change?','Role-play: negotiate your salary.'),
+C('Terceira condicional','Para o passado que não aconteceu: If I had known, I would have acted differently.',[['If I had started earlier, I would have finished','Se eu tivesse começado antes, teria terminado'],['We would have saved money if we had planned','Teríamos economizado se tivéssemos planejado']],'Erros e aprendizados',[['mistake','erro'],['lesson learned','lição aprendida'],['in hindsight','olhando para trás'],['prevent','prevenir'],['root cause','causa raiz'],['take ownership','assumir a responsabilidade']],'Describe a mistake at work and what you learned.','Interview: Tell me about a time you made a mistake.'),
+C('Modais de dedução','Must = certeza (it must be late). Might = possibilidade. Can\'t = impossível.',[['She must be in a meeting','Ela deve estar em reunião'],['The invoice might be wrong','A fatura pode estar errada']],'Resolução de problemas',[['bottleneck','gargalo'],['workaround','solução alternativa'],['priority','prioridade'],['escalate','levar a um superior'],['troubleshoot','investigar e resolver um problema'],['feasible','viável']],'Analyse a problem at work and suggest two solutions.','Explain how you solved a difficult problem (method STAR).'),
+C('Passiva avançada','Com perfeito e futuro: The contract has been signed. The payment will be made on Friday.',[['The contract has been signed','O contrato foi assinado'],['The results will be announced next week','Os resultados serão anunciados semana que vem']],'Relatórios e números',[['increase','aumentar / aumento'],['decrease','diminuir / queda'],['trend','tendência'],['findings','conclusões'],['figures','números / dados'],['compared to','em comparação com']],'Write a short report about a trend at your company.','Describe how a number changed over time.'),
+C('Registro formal x informal','Formal: I would like to request… Informal: Can I get…? Em e-mails para desconhecidos, prefira o formal.',[['I would like to request further information','Gostaria de solicitar mais informações'],['Hey, can you send me the details?','Oi, pode me mandar os detalhes?']],'Linguagem formal',[['regarding','a respeito de'],['kindly','por gentileza'],['assistance','ajuda / assistência'],['inquire','consultar / perguntar'],['further','adicional'],['at your earliest convenience','assim que possível']],'Write a formal letter to a landlord asking about an apartment.','Say the same request formally and informally.'),
+C('Marcadores de discurso','Moreover (além disso), nevertheless (mesmo assim) e therefore (portanto) organizam argumentos.',[['Moreover, it reduces costs','Além disso, reduz custos'],['Therefore, we need more staff','Portanto, precisamos de mais pessoal']],'Argumentação',[['advantage','vantagem'],['drawback','desvantagem'],['on the other hand','por outro lado'],['furthermore','além disso'],['as a result','como resultado'],['to sum up','em resumo']],'Write about the advantages and drawbacks of remote work (150 words).','Give your opinion on remote work for 2 minutes.'),
+C('Collocations','Combinações naturais: make a decision (não "do a decision"), meet a deadline.',[['I made a difficult decision','Tomei uma decisão difícil'],['We always meet our deadlines','Sempre cumprimos os prazos']],'Collocations de trabalho',[['make a decision','tomar uma decisão'],['meet a deadline','cumprir um prazo'],['raise an issue','levantar uma questão'],['reach an agreement','chegar a um acordo'],['take responsibility','assumir responsabilidade'],['run a business','administrar um negócio']],'Write 6 sentences about your job using collocations.','Describe an important decision you made.'),
+C('Wish / if only','Desejos sobre o presente (I wish I had more time) e arrependimentos (I wish I had started earlier).',[['I wish I had more time to study','Queria ter mais tempo para estudar'],['I wish I had started English earlier','Queria ter começado o inglês antes']],'Carreira e crescimento',[['career path','trajetória profissional'],['promotion','promoção'],['mentor','mentor(a)'],['skill gap','lacuna de habilidade'],['certification','certificação'],['professional designation','título profissional (ex.: CPHR)']],'Write about your career goals in Canada.','Where do you see yourself in five years?'),
+C('Orações com particípio','Encurtam frases em textos profissionais: Having checked the numbers, I approved it.',[['Having checked the numbers, I approved it','Depois de conferir os números, aprovei'],['Feeling confident, she accepted the offer','Sentindo-se confiante, ela aceitou a proposta']],'Liderança',[['delegate','delegar'],['motivate','motivar'],['accountability','responsabilização'],['empower','dar autonomia'],['conflict','conflito'],['lead by example','liderar pelo exemplo']],'Describe a good leader you have worked with.','Talk about a time you led a team.'),
+C('Frases clivadas (ênfase)','Para enfatizar: What I need is more time. It was the manager who decided.',[['What I value most is honesty','O que eu mais valorizo é a honestidade'],['It was HR that solved the problem','Foi o RH que resolveu o problema']],'Entrevista comportamental (STAR)',[['situation','situação'],['task','tarefa'],['action','ação'],['result','resultado'],['outcome','desfecho'],['handle','lidar com']],'Write a STAR answer: a time you handled a conflict.','Give two STAR answers out loud.'),
+C('Linguagem cautelosa (hedging)','Para soar profissional e precisa: It seems that…, tends to, is likely to.',[['Costs are likely to rise','Os custos provavelmente vão subir'],['It seems that the team needs training','Parece que a equipe precisa de treinamento']],'Dados e análise',[['approximately','aproximadamente'],['significant','significativo'],['slight','leve / pequeno'],['steady','constante'],['fluctuate','oscilar'],['peak','pico']],'Describe the numbers of a sales chart in 120 words.','Explain numbers from your work in 1 minute.'),
+C('Inversão para ênfase','Em textos formais: Not only did we reduce costs, but we also… Rarely do we see…',[['Not only did we save time, but we also saved money','Não só economizamos tempo, como também dinheiro'],['Rarely have I seen such a good team','Raramente vi uma equipe tão boa']],'Leis trabalhistas no Canadá',[['Employment Standards','normas trabalhistas (lei provincial)'],['overtime','hora extra'],['minimum wage','salário mínimo'],['statutory holiday','feriado oficial'],['notice period','aviso prévio'],['human rights','direitos humanos']],'Compare one labour rule in Brazil and in British Columbia.','Explain a Brazilian labour rule to a Canadian.'),
+C('Artigos (a / the / sem artigo)','A = algo não específico. The = algo específico. Sem artigo para ideias gerais (Diversity is important).',[['The policy we discussed is new','A política que discutimos é nova'],['Diversity makes teams stronger','A diversidade fortalece as equipes']],'Cultura organizacional',[['inclusion','inclusão'],['diversity','diversidade'],['equity','equidade'],['workplace culture','cultura organizacional'],['accommodation','adaptação para necessidades do funcionário'],['respectful workplace','ambiente de trabalho respeitoso']],'Why does workplace culture matter? (150 words)','Give your opinion about diversity at work.'),
+C('Preposições dependentes','Algumas palavras pedem preposição fixa: responsible for, interested in, good at, depend on.',[["I'm interested in people management",'Tenho interesse em gestão de pessoas'],['It depends on the company','Depende da empresa']],'Networking',[['reach out','entrar em contato'],['connect','conectar-se'],['referral','indicação'],['informational interview','conversa para conhecer a área'],['LinkedIn profile','perfil no LinkedIn'],['elevator pitch','apresentação rápida']],'Write a LinkedIn message to an HR professional in Vancouver.','Give your 60-second elevator pitch.'),
+C('Condicionais mistas','Misturam tempos: If I had learned English as a child, I would be fluent now.',[['If I had learned English as a child, I would be fluent now','Se eu tivesse aprendido inglês criança, seria fluente hoje'],['If I were more organized, I would have finished','Se eu fosse mais organizada, teria terminado']],'Apresentações',[['overview','visão geral'],['outline','roteiro / estrutura'],['highlight','destacar'],['to conclude','para concluir'],['Q&A','perguntas e respostas'],["Let's move on to",'Vamos passar para']],'Write the outline of a 3-minute presentation about your work.','Give a 2-minute presentation.'),
+C('Revisão B2 e expressões do escritório','Expressões comuns no trabalho no Canadá. Use com moderação em contextos formais.',[["Let's touch base next week",'Vamos conversar semana que vem'],['Thanks for the heads-up','Obrigada pelo aviso']],'Expressões do escritório',[['touch base','fazer um contato rápido'],['heads-up','aviso prévio'],['keep me in the loop','me mantenha informada'],['get the ball rolling','dar o pontapé inicial'],['back to square one','voltar à estaca zero'],['call it a day','encerrar o dia']],'Write an email using 3 office expressions naturally.','Talk about your progress in English this year.'),
+C('Estratégia: formato do IELTS','São 4 partes: Listening (30 min), Reading (60 min), Writing (60 min) e Speaking (11 a 14 min). Para trabalho e imigração, a versão costuma ser a General Training.',[['What band score do you need?','Qual nota você precisa?'],['The test takes almost three hours','A prova leva quase três horas']],'Vocabulário da prova',[['band score','nota (de 0 a 9)'],['General Training','versão para trabalho e imigração'],['section','seção / parte'],['task','tarefa'],['time limit','tempo limite'],['answer sheet','folha de respostas']],'Write 5 sentences about why you are taking the IELTS.','Speaking Part 1: answer questions about your home, work and hobbies.'),
+C('Listening: formulários e números','Ouça soletrações, números e datas. Leia as perguntas antes do áudio e preveja o tipo de resposta.',[['Could you spell your surname?','Pode soletrar seu sobrenome?'],["It's double L, E",'É dois L, E']],'Dados pessoais e reservas',[['surname','sobrenome'],['postcode','código postal'],['date of birth','data de nascimento'],['booking reference','código da reserva'],['deposit','sinal / depósito'],['available','disponível']],'Write an email booking a course, including dates and prices.','Spell your full name and address out loud 3 times.'),
+C('Listening: mapas e múltipla escolha','Aprenda palavras de posição e cuidado com distratores: o falante muitas vezes muda de ideia.',[['It is opposite the library','Fica em frente à biblioteca'],['Actually, we changed it to Tuesday','Na verdade, mudamos para terça']],'Localização',[['opposite','em frente a'],['next to','ao lado de'],['behind','atrás de'],['at the end of','no fim de'],['entrance','entrada'],['corridor','corredor']],'Describe the way from your home to work.','Describe the layout of your office.'),
+C('Reading: skimming, scanning e True/False/Not Given','Skimming = ler rápido para a ideia geral. Scanning = procurar uma informação. Not Given = o texto não fala sobre isso.',[['The text does not mention it','O texto não menciona isso'],['The writer suggests that…','O autor sugere que…']],'Educação e treinamento',[['qualification','qualificação'],['enrol','matricular-se'],['tuition','mensalidade'],['workshop','oficina'],['mandatory','obrigatório'],['optional','opcional']],'Write a summary of a short article you read (80 words).','Speaking Part 1: talk about your studies.'),
+C('Reading: títulos e paráfrase','As respostas usam sinônimos do texto. Treine reconhecer paráfrases: purchase = buy.',[['The staff were trained','Os funcionários foram treinados'],['You must obtain a permit','Você precisa obter uma permissão']],'Sinônimos frequentes',[['purchase','comprar'],['assist','ajudar'],['require','exigir'],['obtain','obter'],['commence','começar'],['roughly','cerca de']],'Rewrite 6 sentences using synonyms.','Explain an article you read in your own words.'),
+C('Writing Task 1: carta formal','Carta de 150+ palavras em 20 minutos. Cubra os 3 tópicos pedidos. Abra com Dear Sir or Madam e feche com Yours faithfully.',[['I am writing to complain about…','Escrevo para reclamar de…'],['I look forward to hearing from you','Aguardo seu retorno']],'Cartas formais',[['Dear Sir or Madam','Prezado(a) senhor(a)'],['Yours faithfully','Atenciosamente (formal)'],['I would be grateful if','Ficaria grata se'],['enclosed','em anexo'],['inconvenience','transtorno'],['I look forward to','Aguardo / fico no aguardo de']],'IELTS Task 1: Write a letter to your landlord. Explain a problem in the apartment, say how it affects you and what you want him to do. (150+ words)','Speaking Part 1: talk about where you live.'),
+C('Writing Task 1: cartas semi-formais e informais','Para conhecidos: Dear John… Best wishes. Tom amigável, mas organizado em parágrafos.',[['It was great to hear from you','Foi ótimo ter notícias suas'],["I can't wait to see you",'Mal posso esperar para te ver']],'Cartas informais',[['Best wishes','Um abraço'],['Thanks for your letter','Obrigada pela sua carta'],['Guess what?','Adivinha?'],['catch up','colocar o papo em dia'],['give my love to','mande lembranças para'],['drop me a line','me escreva']],'IELTS Task 1: Write to a friend inviting them to visit you in Canada. Say what you will do together. (150+ words)','Speaking Part 1: talk about friends and free time.'),
+C('Writing Task 2: redação de opinião','250+ palavras em 40 minutos. Introdução com sua posição, 2 parágrafos de argumentos com exemplos e conclusão.',[['I strongly believe that…','Acredito firmemente que…'],['For example,','Por exemplo,']],'Trabalho e sociedade',[['workforce','força de trabalho'],['work-life balance','equilíbrio entre vida e trabalho'],['productivity','produtividade'],['flexible hours','horário flexível'],['unemployment','desemprego'],['skilled workers','trabalhadores qualificados']],'IELTS Task 2: Some people think employees should work from home. To what extent do you agree or disagree? (250+ words)','Speaking Part 3: discuss work-life balance.'),
+C('Writing Task 2: discussão e problema-solução','Discussão: apresente os dois lados e sua opinião. Problema-solução: causas, efeitos e soluções concretas.',[['On the one hand… on the other hand…','Por um lado… por outro…'],['One possible solution is…','Uma solução possível é…']],'Imigração e cidades',[['immigration','imigração'],['cost of living','custo de vida'],['housing shortage','falta de moradia'],['integrate','integrar-se'],['opportunity','oportunidade'],['urban','urbano']],'IELTS Task 2: Many cities have a housing shortage. What are the causes and what can be done? (250+ words)','Speaking Part 3: discuss life in big cities.'),
+C('Speaking Part 2: cartão de tema','1 minuto para anotar e 2 minutos falando sem parar. Use as 4 perguntas do cartão como roteiro.',[["I'd like to talk about…",'Eu gostaria de falar sobre…'],['What I remember most is…','O que eu mais lembro é…']],'Ganhando tempo ao falar',[["That's an interesting question",'Essa é uma pergunta interessante'],['Let me think','Deixe-me pensar'],['as far as I remember','até onde eu lembro'],['to be honest','para ser sincera'],['the thing is','a questão é'],['what I mean is','o que eu quero dizer é']],'Write notes for: Describe a trip you enjoyed. Say where you went, who you went with, what you did and why you enjoyed it.','Part 2: speak for 2 minutes about a trip you enjoyed.'),
+C('Speaking Part 3: discussão','Respostas mais longas e abstratas: opinião, motivo, exemplo e comparação.',[['It depends on the situation','Depende da situação'],['Compared to the past, people now…','Comparado ao passado, as pessoas agora…']],'Tecnologia e futuro',[['artificial intelligence','inteligência artificial'],['automation','automação'],['in the long run','a longo prazo'],['benefit','benefício'],['concern','preocupação'],['adapt','adaptar-se']],'IELTS Task 2: Technology is replacing many jobs. Is this a positive or negative development? (250+ words)','Part 3: discuss how technology changes work.'),
+C('Simulado final e dia da prova','Faça um simulado completo cronometrado. Na véspera, revise e durma bem. Você chegou até aqui!',[['I am ready for the test','Estou pronta para a prova'],['I did my best','Dei o meu melhor']],'Revisão geral',[['confident','confiante'],['achievement','conquista'],['milestone','marco'],['proud','orgulhosa'],['next step','próximo passo'],['well done','muito bem']],'Full mock: Task 1 letter + Task 2 essay in 60 minutes.','Full Speaking mock: Parts 1, 2 and 3 (14 minutes).')
+];
+const KIND={1:'gram',2:'vocab',3:'read',4:'speak',5:'write',6:'review',0:'test'};
+const KIND_LABEL={gram:'Gramática',vocab:'Vocabulário',read:'Leitura',speak:'Fala',write:'Escrita',review:'Revisão',test:'Teste'};
+const PHASE_END=new Set([11,27,43]);
+
+const QUOTES=['Cada frase de hoje é uma conversa que você vai ter em {dest}.','Devagar também é rápido, desde que seja todo dia.','Você não precisa de inglês perfeito. Precisa de inglês suficiente, e isso você já está construindo.','Errar em voz alta aqui é o que te deixa tranquila lá.','Little by little, a little becomes a lot. (Pouco a pouco, o pouco vira muito.)','A {name} do futuro vai agradecer a {name} de hoje.','Dez minutos hoje valem mais do que duas horas no domingo.','Repetir não é andar em círculos. É subir uma escada.','Você já sabe mais inglês do que sabia ontem.','Coragem não é falar sem medo. É falar com medo mesmo.','One day or day one? Você escolheu day one.','Cada carimbo no calendário é um passo até o seu objetivo.','Não compare o seu capítulo 1 com o capítulo 20 de ninguém.','Practice makes progress. (A prática traz progresso.)','Constância vence talento quando o talento não aparece.','Hoje é um ótimo dia para dizer "Can you repeat, please?" sem vergonha nenhuma.','Você está construindo a sua independência, frase por frase.','O medo diminui a cada palavra que você entende.',"Keep going. You're doing great! (Continue. Você está indo muito bem!)",'Seu sotaque é a prova de que você fala mais de uma língua.','Estudar cansada também conta. Faça o mínimo, mas faça.','Daqui a pouco o inglês deixa de ser barreira e vira ponte.','Você não está atrasada. Você está a caminho.','{dest} já está te esperando. Bora praticar!','Pequenas vitórias todo dia viram uma grande mudança.','Dream big, start small, act now. (Sonhe grande, comece pequeno, aja agora.)','A entrevista de emprego em inglês começa a ser vencida hoje.','A nota do IELTS é feita de dias comuns como este.'];
+const DONE_QUOTES=['Dia carimbado! Mais um passo rumo ao objetivo. ✈️','Well done! (Muito bem!) Amanhã tem mais.','Você cumpriu o combinado com você mesma. Isso é disciplina.','Que orgulho! O plano funciona porque você está aparecendo.','Great job! Seu eu do futuro, lá em {dest}, agradece.'];
+const LEVELS=[{n:'Turista de primeira viagem',x:0},{n:'Passageira',x:150},{n:'Exploradora',x:400},{n:'Viajante',x:800},{n:'Cidadã do mundo',x:1300},{n:'Newcomer confiante',x:2500},{n:'Profissional bilíngue',x:4500},{n:'Pronta para o IELTS',x:7000}];
+
+/* ================= Estado ================= */
+const blankCfg=()=>({name:'Elline',dest:'Toronto',trip:'2026-11-20',canStart:'2026-12-07',canDest:'Vancouver',target:6.5});
+const blank=()=>({cfg:blankCfg(),days:{},tests:[],ielts:[],xp:0,updatedAt:0});
+function norm(o){const s=Object.assign(blank(),o);s.cfg=Object.assign(blankCfg(),o&&o.cfg);s.ielts=s.ielts||[];return s}
+function load(){try{const r=localStorage.getItem(KEY);if(r)return norm(JSON.parse(r))}catch(e){}return blank()}
+let S=load(),view='hoje',selDate=null,SCH=[],IDX=new Map(),planTrack=null,planPhase=null,contTrack=null;
+function save(){S.updatedAt=Date.now();try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}cloudPush()}
+function day(s){return S.days[s]||(S.days[s]={duo:false,duoXp:'',pod:false,podNote:'',main:false,score:null,bonus:false})}
+
+/* ================= Datas ================= */
+const pad=n=>String(n).padStart(2,'0');
+const iso=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const parse=s=>new Date(s+'T12:00:00');
+const todayISO=()=>iso(new Date());
+const MES=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+const MESC=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+const DOWL=['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
+const fmtLong=s=>{const d=parse(s);return `${DOWL[d.getDay()]}, ${d.getDate()} de ${MES[d.getMonth()]} de ${d.getFullYear()}`};
+const fmtShort=s=>{const d=parse(s);return `${d.getDate()} ${MESC[d.getMonth()]}`};
+const fmtShortY=s=>{const d=parse(s);return `${d.getDate()} ${MESC[d.getMonth()]} ${String(d.getFullYear()).slice(2)}`};
+const addDays=(s,n)=>{const d=parse(s);d.setDate(d.getDate()+n);return iso(d)};
+const diff=(a,b)=>Math.round((parse(b)-parse(a))/864e5);
+
+/* ================= Cronograma ================= */
+const phaseOf=w=>PHASES.findIndex(p=>w>=p.s&&w<p.e);
+function buildSchedule(){
+  const out=[];let li=0;const tested=new Set();const end=S.cfg.trip,last=addDays(end,-1);
+  for(let s=START;s<=end;s=addDays(s,1)){const dow=parse(s).getDay();let it;
+    if(s===end)it={type:'trip'};else if(s===last)it={type:'test',test:'final'};
+    else if(dow===0&&li>0&&!tested.has(LESSONS[li-1].w)){const w=LESSONS[li-1].w;tested.add(w);it={type:'test',test:'w'+w,week:w}}
+    else if(li<LESSONS.length)it={type:'lesson',li:li++};else it={type:'review'};
+    it.track='trip';it.date=s;out.push(it)}
+  for(let s=addDays(end,1);s<S.cfg.canStart;s=addDays(s,1))out.push({track:'away',type:'away',date:s});
+  for(let i=0;i<CUR.length*7;i++){const s=addDays(S.cfg.canStart,i),w=Math.floor(i/7),k=KIND[parse(s).getDay()];const it={track:'ca',type:k,w,date:s};
+    if(k==='test')it.test=w===CUR.length-1?'cfinal':PHASE_END.has(w)?'cp'+phaseOf(w):(w%4===3?'cm'+w:'cw'+w);
+    out.push(it)}
+  return out;
+}
+function rebuild(){SCH=buildSchedule();IDX=new Map(SCH.map((x,i)=>[x.date,i]))}
+const itemAt=s=>SCH[IDX.get(s)];
+const trackDays=t=>SCH.filter(x=>x.track===t&&x.type!=='trip');
+const clampDate=s=>{if(!SCH.length)return s;if(s<SCH[0].date)return SCH[0].date;const l=SCH[SCH.length-1].date;return s>l?l:s};
+function isDone(s){const it=itemAt(s);if(!it||it.type==='trip'||it.type==='away')return false;const D=S.days[s];return !!(D&&D.duo&&D.pod&&D.main)}
+const activeTrack=()=>{const t=todayISO();return t<=S.cfg.trip?'trip':'ca'};
+const weekItems=w=>CUR[w].gx.concat(CUR[w].vw);
+const ALL_TRIP=LESSONS.flatMap(l=>l.p),ALL_CA=CUR.flatMap((_,w)=>weekItems(w));
+function coveredTrip(){const t=todayISO();return SCH.filter(x=>x.type==='lesson'&&(x.date<=t||(S.days[x.date]&&S.days[x.date].main))).map(x=>LESSONS[x.li])}
+function caWeeksReached(){const t=todayISO();let n=0;for(let w=0;w<CUR.length;w++){if(addDays(S.cfg.canStart,w*7)<=t)n=w+1}return Math.max(n,1)}
+function testName(id){
+  if(id==='diag')return 'Nivelamento da viagem';if(id==='final')return 'Teste final da viagem';if(id==='practice')return 'Treino livre (viagem)';
+  if(id==='cdiag')return 'Nivelamento Canadá';if(id==='cpractice')return 'Treino livre (Canadá)';if(id==='cfinal')return 'Teste final da trilha Canadá';
+  if(id[0]==='w'){const w=+id.slice(1);return `Teste da semana ${w+1}: ${WEEKS[w].t}`}
+  if(id.startsWith('cw'))return `Teste da semana ${+id.slice(2)+1}`;
+  if(id.startsWith('cm'))return `Checkpoint do mês (semana ${+id.slice(2)+1})`;
+  if(id.startsWith('cp'))return `Teste da ${PHASES[+id.slice(2)].n}`;
+  return id;
+}
+function itemLabel(it){if(it.track==='ca')return KIND_LABEL[it.type];if(it.type==='lesson')return `Aula ${it.li+1}`;if(it.type==='review')return 'Revisão';if(it.type==='trip')return 'Embarque';return it.test==='final'?'Teste final':'Teste'}
+
+/* ================= Métricas ================= */
+function streak(){let n=0,s=todayISO();const st=x=>{const D=S.days[x];return (D&&(D.duo||D.pod||D.main))||S.tests.some(t=>t.date===x)};
+  if(!st(s))s=addDays(s,-1);while(st(s)){n++;s=addDays(s,-1)}return n}
+function level(){let i=0;LEVELS.forEach((l,k)=>{if(S.xp>=l.x)i=k});const c=LEVELS[i],nx=LEVELS[i+1];return{name:c.n,next:nx?nx.n:null,pct:nx?Math.round((S.xp-c.x)/(nx.x-c.x)*100):100,need:nx?nx.x-S.xp:0}}
+const fill=(t,tr)=>t.replace(/\{dest\}/g,(tr==='ca'?S.cfg.canDest:S.cfg.dest)||'seu destino').replace(/\{name\}/g,S.cfg.name||'você');
+const quoteFor=(s,tr)=>fill(QUOTES[Math.abs(diff(START,s))%QUOTES.length],tr);
+const best=id=>{const r=S.tests.filter(t=>t.id===id);return r.length?Math.max(...r.map(t=>t.pct)):null};
+function ieltsOverall(r){const a=(r.L+r.R+r.W+r.S)/4,f=Math.floor(a),x=a-f;return x<.25?f:x<.75?f+.5:f+1}
+
+/* ================= Utilidades ================= */
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+let toastT;function toast(m,ms=3800){const t=document.getElementById('toast');t.textContent=m;t.classList.remove('hidden');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.add('hidden'),ms)}
+let voice=null;
+function pickVoice(){const vs=speechSynthesis.getVoices();voice=vs.find(v=>/en[-_]CA/i.test(v.lang))||vs.find(v=>/en[-_]US/i.test(v.lang))||vs.find(v=>/^en/i.test(v.lang))||null}
+if('speechSynthesis' in window){pickVoice();speechSynthesis.onvoiceschanged=pickVoice}
+function say(t,slow){if(!('speechSynthesis' in window)){toast('Este navegador não tem voz em inglês. Tente o Chrome ou o Safari.');return}
+  speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t.replace(/\s\/\s/g,'. ').replace(/[()]/g,''));u.lang=voice?voice.lang:'en-US';if(voice)u.voice=voice;u.rate=slow?.62:.95;speechSynthesis.speak(u)}
+const sayBtns=en=>`<span class="say"><button class="sbtn" data-act="say" data-t="${esc(en)}" aria-label="Ouvir">🔊</button><button class="sbtn" data-act="say" data-slow="1" data-t="${esc(en)}" aria-label="Ouvir devagar">🐢</button></span>`;
+const phraseRow=p=>`<div class="phrase" data-s="${esc((p[0]+' '+p[1]).toLowerCase())}"><span class="en">${esc(p[0])}</span><span class="pt">${esc(p[1])}</span>${sayBtns(p[0])}</div>`;
+
+/* ================= Cartão de embarque ================= */
+function renderPass(){
+  const t=todayISO(),tr=activeTrack();let html;
+  if(tr==='trip'){const left=Math.max(0,diff(t,S.cfg.trip)),sd=trackDays('trip'),done=sd.filter(x=>isDone(x.date)).length,pct=sd.length?Math.round(done/sd.length*100):0;
+    html=`<div class="pass"><div class="main"><div class="route"><span>Brasil</span><span class="plane" aria-hidden="true">✈</span><span>${esc(S.cfg.dest)}</span></div>
+      <div class="fields"><div><span>Passageira</span><b>${esc(S.cfg.name)}</b></div><div><span>Embarque</span><b>${fmtShort(S.cfg.trip)}</b></div><div><span>Pontos</span><b>${S.xp} XP</b></div></div></div>
+      <div class="stub"><div class="days">${left}</div><small>${left===1?'dia para':'dias para'}<br>o embarque</small></div>
+      <div class="runway"><div class="bar" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100" aria-label="Trilha da viagem"><i style="width:${pct}%"></i></div><p>Trilha da viagem: ${done} de ${sd.length} dias carimbados (${pct}%)</p></div></div>`;
+  }else{const sd=trackDays('ca'),done=sd.filter(x=>isDone(x.date)).length,pct=Math.round(done/sd.length*100);
+    const started=t>=S.cfg.canStart,end=addDays(S.cfg.canStart,CUR.length*7-1);
+    const big=started?Math.max(0,Math.ceil(diff(t,end)/7)):diff(t,S.cfg.canStart);
+    const w=started?Math.min(CUR.length-1,Math.floor(diff(S.cfg.canStart,t)/7)):0,ph=PHASES[phaseOf(w)];
+    html=`<div class="pass ca"><div class="main"><div class="route"><span>Brasil</span><span class="plane" aria-hidden="true">✈</span><span>${esc(S.cfg.canDest)}</span></div>
+      <div class="fields"><div><span>Passageira</span><b>${esc(S.cfg.name)}</b></div><div><span>Etapa</span><b>${esc(ph.lvl)}</b></div><div><span>Meta IELTS</span><b>${esc(S.cfg.target)}</b></div></div></div>
+      <div class="stub"><div class="days">${big}</div><small>${started?'semanas até<br>o IELTS':'dias para<br>começar'}</small></div>
+      <div class="runway"><div class="bar" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100" aria-label="Trilha Canadá"><i style="width:${pct}%"></i></div><p>Trilha Canadá: ${done} de ${sd.length} dias carimbados (${pct}%)</p></div></div>`}
+  document.getElementById('pass').innerHTML=html;
+}
+
+/* ================= Hoje ================= */
+function taskRows(s,D,mainBlock,pod,kw){
+  return `<div class="panel"><h3 style="margin-bottom:2px">Plano do dia</h3>
+    <p class="small muted">Sugestão de horário: 19h Duolingo, 19h20 tarefa principal, 20h20 podcast.</p>
+    <div class="task"><button class="check ${D.duo?'on':''}" data-act="toggle" data-k="duo" data-d="${s}" aria-pressed="${D.duo}" aria-label="Duolingo feito">✓</button>
+      <div class="tbody"><h3>Duolingo</h3><p class="muted small">Cumpra a meta diária no app (15 a 20 minutos).</p>
+      <label class="mini">XP de hoje no Duolingo <input type="number" min="0" inputmode="numeric" data-field="duoXp" data-d="${s}" value="${esc(D.duoXp)}"></label></div></div>
+    <div class="task"><span class="check static ${D.main?'on':''}" aria-label="${D.main?'Feito':'Pendente'}">✓</span><div class="tbody">${mainBlock}</div></div>
+    <div class="task"><button class="check ${D.pod?'on':''}" data-act="toggle" data-k="pod" data-d="${s}" aria-pressed="${D.pod}" aria-label="Podcast ouvido">✓</button>
+      <div class="tbody"><h3>Podcast: ${esc(pod.n)}</h3><p class="muted small">${esc(pod.d)} Ouça 1 episódio (10 a 20 min).${kw?` Se quiser um tema, busque por “${esc(kw)}”.`:''}</p>
+      <label class="mini">Episódio que ouvi <input class="wide" type="text" data-field="podNote" data-d="${s}" value="${esc(D.podNote)}" placeholder="Nome ou número do episódio"></label></div></div></div>`;
+}
+function stampPanel(s,idx,tr){return isDone(s)?`<div class="panel stampbox"><div class="stamp ${window._pop===s?'pop':''}">DIA<br>${fmtShort(s).toUpperCase()}<br>✓</div><div><h3>Dia carimbado!</h3><p class="muted small">${esc(fill(DONE_QUOTES[idx%DONE_QUOTES.length],tr))}</p></div></div>`:''}
+function scoreLine(v){return v!=null?`<span class="small muted">Melhor resultado: <b>${v}%</b></span>`:''}
+
+function vToday(){
+  const real=todayISO(),s=selDate||clampDate(real),it=itemAt(s);if(!it)return '<p>Confira as datas em Evolução > Configurações.</p>';
+  const back=s!==clampDate(real)?`<button class="btn ghost sm" data-act="open" data-d="${clampDate(real)}">Voltar para hoje</button>`:'';
+  if(it.type==='trip'){const dl=SCH.filter(x=>x.type==='lesson'&&S.days[x.date]&&S.days[x.date].main).length;
+    return `<div class="head"><div><h2>Dia do embarque ✈️</h2><p class="muted">${fmtLong(s)}</p></div>${back}</div>
+    <div class="panel"><p class="quote">Você se preparou para este dia. Agora é viver tudo isso em inglês. Have a wonderful trip!</p></div>
+    <div class="panel"><h3>Sua bagagem de inglês</h3><p>${dl} de ${LESSONS.length} aulas feitas e ${S.xp} XP. As frases da viagem estão na aba Conteúdo, com áudio.</p><button class="btn" data-act="cont" data-t="trip">Abrir frases da viagem</button></div>`}
+  if(it.type==='away'){return `<div class="head"><div><h2>Pausa entre as trilhas</h2><p class="muted">${fmtLong(s)}</p></div>${back}</div>
+    <div class="panel"><p class="quote">Aproveite a viagem e use o inglês de verdade. Cada conversa lá vale por uma aula.</p></div>
+    <div class="panel"><h3>A trilha Canadá começa em ${fmtShort(S.cfg.canStart)}</h3><p class="muted small">Até lá, mantenha o Duolingo e consulte as frases da viagem quando precisar. Se quiser começar antes, mude a data em Evolução > Configurações.</p>
+    <div class="row"><button class="btn" data-act="cont" data-t="trip">Frases da viagem</button><button class="btn ghost" data-act="plan" data-t="ca">Ver trilha Canadá</button></div></div>`}
+  return it.track==='trip'?todayTrip(s,it,back,real):todayCa(s,it,back,real);
+}
+function todayTrip(s,it,back,real){
+  const idx=IDX.get(s),D=day(s),pod=PODCASTS[idx%PODCASTS.length],lesson=it.type==='lesson'?LESSONS[it.li]:null;
+  const kw=lesson?lesson.k:(it.week!=null?LESSONS.find(l=>l.w===it.week).k:'travel English');let mb;
+  if(lesson)mb=`<h3>Aula ${it.li+1}: ${esc(lesson.t)}</h3><p class="muted small">Semana ${lesson.w+1}: ${esc(WEEKS[lesson.w].t)} ${WEEKS[lesson.w].e}. Ouça cada frase, repita 3 vezes em voz alta e depois faça o exercício.</p>
+    ${lesson.p.map(phraseRow).join('')}<div class="row" style="margin-top:12px"><button class="btn" data-act="quiz" data-kind="lesson" data-li="${it.li}" data-d="${s}">${D.main?'Refazer exercício':'Fazer exercício da aula'}</button>${scoreLine(D.score)}</div>`;
+  else if(it.type==='test')mb=`<h3>${esc(testName(it.test))}</h3><p class="muted small">${it.test==='final'?'20 perguntas sobre tudo o que você estudou.':'12 perguntas: tradução e áudio.'}</p>
+    <div class="row"><button class="btn" data-act="quiz" data-kind="test" data-id="${it.test}" data-d="${s}">${best(it.test)!=null?'Refazer teste':'Começar teste'}</button>${scoreLine(best(it.test))}</div>`;
+  else mb=`<h3>Revisão geral</h3><p class="muted small">12 perguntas misturando todas as aulas.</p><div class="row"><button class="btn" data-act="quiz" data-kind="review" data-d="${s}">${D.main?'Revisar de novo':'Começar revisão'}</button>${scoreLine(D.score)}</div>`;
+  const diagB=!S.tests.some(t=>t.id==='diag')?`<div class="panel banner"><h3>Comece pelo teste de nivelamento</h3><p>São 15 perguntas, sem pressão. Ele marca o seu ponto de partida para medir a evolução.</p><button class="btn" data-act="quiz" data-kind="test" data-id="diag" data-d="${s}">Fazer nivelamento</button></div>`:'';
+  const n=trackDays('trip').length;
+  return `<div class="head"><div><h2>Viagem: dia ${idx+1} de ${n}</h2><p class="muted">${fmtLong(s)}${s===real?' (hoje)':''}</p></div>${back}</div>
+  <div class="panel"><p class="quote">${esc(quoteFor(s,'trip'))}</p></div>${diagB}${stampPanel(s,idx,'trip')}${taskRows(s,D,mb,pod,kw)}`;
+}
+function todayCa(s,it,back,real){
+  const idx=IDX.get(s),D=day(s),w=it.w,c=CUR[w],ph=PHASES[phaseOf(w)],pod=ph.pods[idx%ph.pods.length],dayN=diff(S.cfg.canStart,s)+1;
+  let mb='';const ielts=w>=44;
+  if(it.type==='gram')mb=`<h3>Gramática: ${esc(c.g)}</h3><div class="note">${esc(c.ge)}</div>${c.gx.map(phraseRow).join('')}
+    <p class="muted small" style="margin-top:8px">Crie 3 frases suas com essa estrutura e fale em voz alta. Depois faça o exercício.</p>
+    <div class="row"><button class="btn" data-act="quiz" data-kind="caweek" data-w="${w}" data-n="6" data-d="${s}">${D.main?'Refazer exercício':'Fazer exercício'}</button>${scoreLine(D.score)}</div>`;
+  else if(it.type==='vocab')mb=`<h3>Vocabulário: ${esc(c.v)}</h3><p class="muted small">Ouça, repita e escreva uma frase com cada palavra.</p>${c.vw.map(phraseRow).join('')}
+    <div class="row" style="margin-top:12px"><button class="btn" data-act="quiz" data-kind="caweek" data-w="${w}" data-n="6" data-d="${s}">${D.main?'Refazer exercício':'Fazer exercício'}</button>${scoreLine(D.score)}</div>`;
+  else if(it.type==='read')mb=`<h3>Leitura${ielts?': prática IELTS':''}</h3><div class="note">${esc(ph.read)}</div>
+    <label class="mini" style="display:block">Anote 5 palavras ou expressões novas</label><textarea data-field="words" data-d="${s}" placeholder="ex.: hiring freeze = congelamento de contratações">${esc(D.words||'')}</textarea>
+    <div class="row" style="margin-top:8px"><button class="btn ${D.main?'ghost':''}" data-act="markmain" data-d="${s}">${D.main?'Leitura feita ✓':'Marcar leitura como feita'}</button></div>`;
+  else if(it.type==='speak')mb=`<h3>Fala${ielts?': IELTS Speaking':''}</h3><div class="note"><b>${esc(c.sp)}</b></div>
+    <p class="muted small">Use o vocabulário da semana (${esc(c.v)}). Fale sem parar até o tempo acabar. Se puder, grave no celular e ouça depois.</p>
+    <div class="timer" id="timer">0:00</div><div class="row"><button class="btn ghost sm" data-act="timer" data-s="60">1 minuto</button><button class="btn ghost sm" data-act="timer" data-s="120">2 minutos</button><button class="btn ghost sm" data-act="timer" data-s="0">Parar</button></div>
+    <div class="row" style="margin-top:10px"><button class="btn ${D.main?'ghost':''}" data-act="markmain" data-d="${s}">${D.main?'Falei em voz alta ✓':'Falei em voz alta'}</button></div>`;
+  else if(it.type==='write')mb=`<h3>Escrita${ielts?': IELTS Writing':''}</h3><div class="note"><b>${esc(c.wp)}</b></div>
+    <textarea id="wtext" data-d="${s}" style="min-height:180px" placeholder="Escreva aqui em inglês…"></textarea><p class="small muted" id="wcount">0 palavras</p>
+    <div class="row"><button class="btn" data-act="wsave" data-d="${s}">Salvar texto</button><button class="btn green" data-act="wfix" data-d="${s}" data-w="${w}" id="wfixbtn">Corrigir com o Claude</button></div>
+    <div id="wfb"></div>`;
+  else if(it.type==='review')mb=`<h3>Revisão da semana</h3><p class="muted small">10 perguntas com o conteúdo desta semana e das anteriores. A repetição espaçada fixa o vocabulário.</p>
+    <div class="row"><button class="btn" data-act="quiz" data-kind="careview" data-w="${w}" data-d="${s}">${D.main?'Revisar de novo':'Começar revisão'}</button>${scoreLine(D.score)}</div>`;
+  else mb=`<h3>${esc(testName(it.test))}</h3><p class="muted small">${it.test.startsWith('cw')?'12 perguntas sobre a semana, com revisão das anteriores.':'Teste mais longo com tudo o que você estudou até aqui. É ele que mostra sua evolução no gráfico.'}</p>
+    <div class="row"><button class="btn" data-act="quiz" data-kind="catest" data-id="${it.test}" data-w="${w}" data-d="${s}">${best(it.test)!=null?'Refazer teste':'Começar teste'}</button>${scoreLine(best(it.test))}</div>`;
+  const diagB=!S.tests.some(t=>t.id==='cdiag')?`<div class="panel banner"><h3>Nivelamento da trilha Canadá</h3><p>20 perguntas com conteúdo de todas as fases. Errar é esperado: ele mostra de onde você parte até o IELTS.</p><button class="btn" data-act="quiz" data-kind="catest" data-id="cdiag" data-d="${s}">Fazer nivelamento</button></div>`:'';
+  return `<div class="head"><div><h2>Canadá: semana ${w+1} de ${CUR.length}</h2><p class="muted">${fmtLong(s)}${s===real?' (hoje)':''}. Dia ${dayN} da trilha, ${esc(ph.n)}.</p></div>${back}</div>
+  <div class="panel"><p class="quote">${esc(quoteFor(s,'ca'))}</p></div>${diagB}${stampPanel(s,idx,'ca')}${taskRows(s,D,mb,pod,'')}`;
+}
+
+/* ================= Cronograma ================= */
+function dayCell(it,t){const D=S.days[it.date]||{},cls=['day'];if(it.date===t)cls.push('today');if(it.date>t)cls.push('future');if(it.type==='trip')cls.push('trip');if(isDone(it.date))cls.push('done');
+  return `<button class="${cls.join(' ')}" data-act="open" data-d="${it.date}" aria-label="${fmtLong(it.date)}: ${itemLabel(it)}"><span class="n">${parse(it.date).getDate()}</span><span class="l">${it.type==='trip'?'✈️':itemLabel(it)}</span>${it.type!=='trip'?`<span class="dots"><i class="${D.duo?'on':''}"></i><i class="${D.main?'on':''}"></i><i class="${D.pod?'on':''}"></i></span>`:''}</button>`}
+const dowRow=s=>{const d=parse(s).getDay();return Array.from({length:7},(_,i)=>`<span class="dow">${['dom','seg','ter','qua','qui','sex','sáb'][(d+i)%7]}</span>`).join('')};
+function vPlan(){
+  const t=todayISO(),tr=planTrack||activeTrack();
+  let html=`<div class="head"><div><h2>Cronograma</h2></div></div><div class="seg" role="group" aria-label="Trilha"><button data-act="plan" data-t="trip" aria-pressed="${tr==='trip'}">Viagem</button><button data-act="plan" data-t="ca" aria-pressed="${tr==='ca'}">Canadá</button></div>
+  <div class="legend" style="margin:6px 0"><span>✓ dia carimbado</span><span>● Duolingo, tarefa, podcast</span><span>Borda vermelha: hoje</span></div>`;
+  if(tr==='trip'){const days=SCH.filter(x=>x.track==='trip');html+=`<p class="muted">${days.length-1} dias de estudo até ${fmtShort(S.cfg.trip)}.</p>`;
+    for(let i=0;i<days.length;i+=7){const wk=days.slice(i,i+7),n=i/7;html+=`<div class="week"><h3>Semana ${n+1}: ${n<WEEKS.length?WEEKS[n].t+' '+WEEKS[n].e:'Reta final ✈️'}</h3></div><div class="cal">${dowRow(wk[0].date)}${wk.map(x=>dayCell(x,t)).join('')}</div>`}
+    return html}
+  const cur=Math.max(0,phaseOf(Math.min(CUR.length-1,Math.max(0,Math.floor(diff(S.cfg.canStart,t)/7))))),p=planPhase!=null?planPhase:cur;
+  html+=`<p class="muted">${CUR.length} semanas, de ${fmtShortY(S.cfg.canStart)} a ${fmtShortY(addDays(S.cfg.canStart,CUR.length*7-1))}. Segunda: gramática. Terça: vocabulário. Quarta: leitura. Quinta: fala. Sexta: escrita. Sábado: revisão. Domingo: teste.</p>
+  <div class="seg" role="group" aria-label="Fase">${PHASES.map((x,i)=>`<button data-act="phase" data-p="${i}" aria-pressed="${i===p}">Fase ${i+1}</button>`).join('')}</div><h3 style="margin-top:10px">${esc(PHASES[p].n)}</h3>`;
+  const ca=SCH.filter(x=>x.track==='ca');
+  for(let w=PHASES[p].s;w<PHASES[p].e;w++){const wk=ca.slice(w*7,w*7+7);
+    html+=`<div class="week"><h3>Semana ${w+1}: ${esc(CUR[w].g)}</h3><p class="small muted">${fmtShort(wk[0].date)} a ${fmtShort(wk[6].date)}. Vocabulário: ${esc(CUR[w].v)}.</p></div><div class="cal">${dowRow(wk[0].date)}${wk.map(x=>dayCell(x,t)).join('')}</div>`}
+  return html;
+}
+
+/* ================= Testes ================= */
+function testRow(id,date,kind,extra=''){const b=best(id);return `<div class="item"><div><b>${esc(testName(id))}</b><br><span class="small muted">${date?'Previsto para '+fmtShortY(date):'Ponto de partida'}</span></div>
+  <div class="row">${b!=null?`<span class="score ${b>=70?'good':''}">${b}%</span>`:''}<button class="btn sm ${b!=null?'ghost':''}" data-act="quiz" data-kind="${kind}" data-id="${id}" ${extra} data-d="${date||todayISO()}">${b!=null?'Refazer':'Fazer'}</button></div></div>`}
+function vTests(){
+  const tripT=[testRow('diag',null,'test')].concat(SCH.filter(x=>x.track==='trip'&&x.type==='test').map(x=>testRow(x.test,x.date,'test')));
+  const caT=SCH.filter(x=>x.track==='ca'&&x.type==='test');
+  const big=[testRow('cdiag',null,'catest')].concat(caT.filter(x=>!x.test.startsWith('cw')).map(x=>testRow(x.test,x.date,'catest',`data-w="${x.w}"`)));
+  const weekly=caT.filter(x=>x.test.startsWith('cw')).map(x=>testRow(x.test,x.date,'catest',`data-w="${x.w}"`));
+  const hist=S.tests.slice(-8).reverse();
+  return `<div class="head"><div><h2>Testes</h2><p class="muted">Pode refazer quantas vezes quiser: vale o melhor resultado.</p></div></div>
+  <div class="panel tlist"><h3>Trilha Canadá</h3>${big.join('')}<details><summary>Testes semanais (${weekly.length})</summary>${weekly.join('')}</details></div>
+  ${ieltsPanel()}
+  <div class="panel tlist"><h3>Trilha da viagem</h3>${tripT.join('')}</div>
+  <div class="panel"><h3>Treino livre</h3><p class="muted small">10 perguntas sorteadas do que você já alcançou.</p><div class="row"><button class="btn" data-act="quiz" data-kind="catest" data-id="cpractice">Treinar Canadá</button><button class="btn ghost" data-act="quiz" data-kind="test" data-id="practice">Treinar viagem</button></div></div>
+  ${hist.length?`<div class="panel tlist"><h3>Últimos resultados</h3>${hist.map(h=>`<div class="item"><div>${esc(testName(h.id))}<br><span class="small muted">${fmtShortY(h.date)}: ${h.correct} de ${h.total} certas</span></div><span class="score ${h.pct>=70?'good':''}">${h.pct}%</span></div>`).join('')}</div>`:''}`;
+}
+function ieltsPanel(){
+  const opts=v=>Array.from({length:19},(_,i)=>i/2).map(x=>`<option value="${x}" ${x===v?'selected':''}>${x}</option>`).join('');
+  const list=S.ielts.slice().reverse();
+  return `<div class="panel ielts"><h3>Simulados IELTS</h3><p class="muted small">Registre aqui as notas dos simulados que fizer (livros Cambridge IELTS General Training, testes do British Council ou da IDP). A nota geral é calculada pela regra oficial de arredondamento.</p>
+  <div class="grid"><div><label for="iL">Listening</label><select id="iL">${opts(5)}</select></div><div><label for="iR">Reading</label><select id="iR">${opts(5)}</select></div><div><label for="iW">Writing</label><select id="iW">${opts(5)}</select></div><div><label for="iS">Speaking</label><select id="iS">${opts(5)}</select></div></div>
+  <label for="iSrc">Fonte do simulado (opcional)</label><input id="iSrc" placeholder="ex.: Cambridge IELTS 18 GT, teste 1">
+  <div class="row" style="margin-top:10px"><button class="btn" data-act="ieltsadd">Salvar simulado</button></div>
+  ${list.length?`<div class="tlist" style="margin-top:10px">${list.map((r,i)=>`<div class="item"><div>${fmtShortY(r.date)}${r.src?': '+esc(r.src):''}<br><span class="small muted">L ${r.L} · R ${r.R} · W ${r.W} · S ${r.S}</span></div><div class="row"><span class="score ${r.overall>=S.cfg.target?'good':''}">${r.overall}</span><button class="btn ghost sm" data-act="ieltsdel" data-i="${S.ielts.length-1-i}" aria-label="Apagar simulado">×</button></div></div>`).join('')}</div>`:''}</div>`;
+}
+
+/* ================= Evolução ================= */
+function lineChart(points,max,lab,goal,unit){
+  if(!points.length)return '';const W=600,H=230,pl=40,pr=18,pt=16,pb=38,n=points.length;
+  const x=i=>pl+(n===1?(W-pl-pr)/2:i*(W-pl-pr)/(n-1)),y=v=>pt+(max-v)*(H-pt-pb)/max;
+  let g='';[0,max/2,goal,max].forEach(v=>{g+=`<line x1="${pl}" x2="${W-pr}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" ${v===goal?'stroke-dasharray="5 5"':''}/><text x="${pl-8}" y="${y(v)+4}" text-anchor="end" font-size="12" fill="var(--muted)">${v}${unit}</text>`});
+  const pts=points.map((p,i)=>`${x(i)},${y(p.v)}`).join(' ');
+  const dots=points.map((p,i)=>`<circle cx="${x(i)}" cy="${y(p.v)}" r="6" fill="${p.v>=goal?'var(--stamp)':'var(--maple)'}"/>${n<=14?`<text x="${x(i)}" y="${H-12}" text-anchor="middle" font-size="12" fill="var(--muted)">${esc(lab(p))}</text>`:''}`).join('');
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Gráfico de evolução">${g}<polyline points="${pts}" fill="none" stroke="var(--maple)" stroke-width="3" stroke-linejoin="round"/>${dots}</svg>`;
+}
+function evoMsg(diagId,isTrack){const d=S.tests.find(x=>x.id===diagId),last=S.tests.filter(x=>isTrack(x.id)&&x.id!==diagId&&!x.id.includes('practice')).slice(-1)[0];
+  if(d&&last){const k=last.pct-d.pct;return k>0?`No nivelamento você acertou ${d.pct}%. No último teste, ${last.pct}%: ${k} pontos a mais. Isso é evolução de verdade! 🎉`:`No nivelamento você acertou ${d.pct}% e no último teste ${last.pct}%. Revise o conteúdo e refaça: a repetição é o que fixa.`}
+  return d?`Seu ponto de partida: ${d.pct}% no nivelamento.`:''}
+function vProgress(){
+  const dsAll=SCH.filter(x=>x.track!=='away'&&x.type!=='trip'),done=dsAll.filter(x=>isDone(x.date)).length;
+  const pods=Object.values(S.days).filter(d=>d.pod).length,duoXp=Object.values(S.days).reduce((a,d)=>a+(+d.duoXp||0),0);
+  const writes=Object.values(S.days).filter(d=>d.wdone).length,lv=level();
+  const isCa=id=>id[0]==='c',isTrip=id=>id[0]!=='c';
+  const caPts=S.tests.filter(x=>isCa(x.id)&&x.id!=='cpractice').map(x=>({v:x.pct,id:x.id}));
+  const trPts=S.tests.filter(x=>isTrip(x.id)&&x.id!=='practice').map(x=>({v:x.pct,id:x.id}));
+  const labCa=p=>p.id==='cdiag'?'Nível':p.id==='cfinal'?'Final':p.id.startsWith('cp')?'Fase':'S'+(+p.id.replace(/\D/g,'')+1);
+  const labTr=p=>p.id==='diag'?'Nível':p.id==='final'?'Final':'S'+(+p.id.slice(1)+1);
+  const iel=S.ielts.map(r=>({v:r.overall,id:''}));
+  return `<div class="head"><div><h2>Sua evolução</h2><p class="muted">Cada número aqui é um passo rumo ao Canadá.</p></div></div>
+  <div class="stats">
+    <div class="stat"><b>🔥 ${streak()}</b><span>dias seguidos estudando</span></div>
+    <div class="stat"><b>${done}</b><span>dias carimbados nas duas trilhas</span></div>
+    <div class="stat"><b>${pods}</b><span>podcasts ouvidos</span></div>
+    <div class="stat"><b>${duoXp}</b><span>XP no Duolingo</span></div>
+    <div class="stat"><b>${writes}</b><span>textos escritos</span></div>
+    <div class="stat lvl"><b>${S.xp} XP</b><span>${esc(lv.name)}${lv.next?`. Faltam ${lv.need} XP para ${esc(lv.next)}`:''}</span><div class="bar"><i style="width:${lv.pct}%"></i></div></div>
+  </div>
+  <div class="panel"><h3>Trilha Canadá</h3>${caPts.length?`<p>${esc(evoMsg('cdiag',isCa))}</p>${lineChart(caPts,100,labCa,70,'%')}<p class="small muted">A linha tracejada marca 70%.</p>`:'<p class="muted">Faça o nivelamento da trilha Canadá para começar o gráfico.</p>'}</div>
+  <div class="panel"><h3>Simulados IELTS</h3>${iel.length?lineChart(iel,9,()=> '',+S.cfg.target,'')+`<p class="small muted">A linha tracejada é a sua meta (${esc(S.cfg.target)}).</p>`:'<p class="muted">Registre seus simulados na aba Testes para acompanhar a nota estimada.</p>'}</div>
+  <div class="panel"><h3>Trilha da viagem</h3>${trPts.length?`<p>${esc(evoMsg('diag',isTrip))}</p>${lineChart(trPts,100,labTr,70,'%')}`:'<p class="muted">Faça o nivelamento da viagem para começar o gráfico.</p>'}</div>
+  <div class="panel settings"><h3>Configurações</h3>
+    <label for="cf-name">Seu nome</label><input id="cf-name" data-field="cfg.name" value="${esc(S.cfg.name)}">
+    <label for="cf-dest">Destino da viagem</label><input id="cf-dest" data-field="cfg.dest" value="${esc(S.cfg.dest)}">
+    <label for="cf-trip">Data do embarque</label><input id="cf-trip" type="date" data-field="cfg.trip" value="${esc(S.cfg.trip)}">
+    <label for="cf-can">Início da trilha Canadá</label><input id="cf-can" type="date" data-field="cfg.canStart" value="${esc(S.cfg.canStart)}">
+    <label for="cf-cdest">Cidade no Canadá</label><input id="cf-cdest" data-field="cfg.canDest" value="${esc(S.cfg.canDest)}">
+    <label for="cf-tg">Meta no IELTS</label><input id="cf-tg" type="number" min="4" max="9" step="0.5" data-field="cfg.target" value="${esc(S.cfg.target)}">
+    <div class="row" style="margin-top:14px"><button class="btn ghost sm" data-act="reset">Zerar progresso</button></div></div>
+  <div class="panel"><h3>Onde seu progresso fica salvo</h3>${cloudPanel()}</div>`;
+}
+
+/* ================= Conteúdo ================= */
+function vContent(){
+  const tr=contTrack||activeTrack();
+  let html=`<div class="head"><div><h2>Conteúdo</h2></div></div><div class="seg" role="group" aria-label="Trilha"><button data-act="cont" data-t="trip" aria-pressed="${tr==='trip'}">Frases da viagem</button><button data-act="cont" data-t="ca" aria-pressed="${tr==='ca'}">Trilha Canadá</button></div>
+  <input class="search" type="search" id="q" placeholder="Buscar em inglês ou português" aria-label="Buscar">`;
+  if(tr==='trip')return html+WEEKS.map((w,wi)=>`<div class="panel"><h3>${w.e} ${esc(w.t)}</h3>${LESSONS.filter(l=>l.w===wi).map(l=>`<div class="group"><p class="small muted" style="margin:10px 0 0"><b>${esc(l.t)}</b></p>${l.p.map(phraseRow).join('')}</div>`).join('')}</div>`).join('');
+  return html+PHASES.map(p=>`<div class="panel"><h3>${esc(p.n)}</h3>${CUR.slice(p.s,p.e).map((c,i)=>`<details class="group"><summary>Semana ${p.s+i+1}: ${esc(c.g)}</summary><div class="note">${esc(c.ge)}</div>${c.gx.map(phraseRow).join('')}<p class="small muted" style="margin:10px 0 0"><b>${esc(c.v)}</b></p>${c.vw.map(phraseRow).join('')}<p class="small" style="margin-top:8px"><b>Escrita:</b> ${esc(c.wp)}<br><b>Fala:</b> ${esc(c.sp)}</p></details>`).join('')}</div>`).join('');
+}
+
+function render(){
+  renderPass();
+  document.querySelectorAll('nav.tabs button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.v===view)));
+  document.getElementById('main').innerHTML=({hoje:vToday,plano:vPlan,testes:vTests,evolucao:vProgress,conteudo:vContent})[view]();
+  window._pop=null;
+  const ta=document.getElementById('wtext');if(ta)loadWriting(ta.dataset.d);
+}
+
+/* ================= Exercícios ================= */
+function makeQuestions(pool,n,all){
+  if(!pool.length)return[];let pick=shuffle(pool.slice()).slice(0,Math.min(n,pool.length));
+  while(pick.length<n)pick.push(pool[Math.floor(Math.random()*pool.length)]);
+  const types=shuffle(Array.from({length:n},(_,i)=>['en2pt','pt2en','listen'][i%3]));
+  return pick.map((p,i)=>{const type=types[i],k=type==='pt2en'?0:1,answer=p[k];
+    const cands=shuffle(pool.filter(x=>x[k]!==answer)).concat(shuffle(all.filter(x=>x[k]!==answer)));
+    const opts=[];for(const c of cands){if(!opts.includes(c[k]))opts.push(c[k]);if(opts.length===3)break}
+    return{type,p,answer,options:shuffle([answer,...opts])}});
+}
+let Q=null;
+function openQuiz(cfg){Q=Object.assign({i:0,correct:0,res:[],answered:false},cfg);drawQ()}
+function closeQuiz(){Q=null;document.getElementById('modal').innerHTML='';if('speechSynthesis' in window)speechSynthesis.cancel()}
+function drawQ(){
+  const m=document.getElementById('modal'),prog=Q.questions.map((_,k)=>`<i class="${k<Q.res.length?(Q.res[k]?'ok':'no'):k===Q.i?'cur':''}"></i>`).join('');
+  if(Q.i>=Q.questions.length){const pct=Math.round(Q.correct/Q.questions.length*100);
+    const msg=pct>=90?'Excelente! Esse conteúdo já é seu. 🌟':pct>=70?'Muito bem! Você está dominando isso. 💪':pct>=50?'Bom caminho! Revise e tente de novo: a segunda vez sempre rende mais.':'Todo começo é assim. Ouça o conteúdo mais uma vez e refaça. Você vai ver a diferença.';
+    m.innerHTML=`<div class="modal" role="dialog" aria-modal="true" aria-label="Resultado"><div class="sheet"><div class="qtop"><div class="prog">${prog}</div><button class="close" data-act="qclose" aria-label="Fechar">×</button></div>
+      <p class="qtype">${esc(Q.title)}</p><div class="big ${pct>=70?'good':'bad'}">${pct}%</div><p>${Q.correct} de ${Q.questions.length} certas. +${Q.gain} XP</p>
+      <p class="quote" style="margin:14px 0">${esc(msg)}</p><div class="row"><button class="btn" data-act="qclose">Concluir</button><button class="btn ghost" data-act="qretry">Fazer de novo</button></div></div></div>`;return}
+  const q=Q.questions[Q.i],prompt=q.type==='en2pt'?['O que significa?',q.p[0]]:q.type==='pt2en'?['Como se diz em inglês?',q.p[1]]:['Ouça e escolha o significado',''];
+  m.innerHTML=`<div class="modal" role="dialog" aria-modal="true" aria-label="${esc(Q.title)}"><div class="sheet"><div class="qtop"><div class="prog">${prog}</div><button class="close" data-act="qclose" aria-label="Fechar">×</button></div>
+    <p class="qtype">${esc(Q.title)}: pergunta ${Q.i+1} de ${Q.questions.length}</p><p class="qtype"><b>${prompt[0]}</b></p>
+    ${q.type==='listen'?`<div class="row" style="margin:8px 0 12px"><button class="btn" data-act="say" data-t="${esc(q.p[0])}">🔊 Ouvir</button><button class="btn ghost" data-act="say" data-slow="1" data-t="${esc(q.p[0])}">🐢 Devagar</button></div>`:`<p class="qtext">${esc(prompt[1])}</p>`}
+    ${q.options.map((o,k)=>`<button class="opt" data-act="ans" data-k="${k}">${esc(o)}</button>`).join('')}
+    <div class="fb" id="fb" aria-live="polite"></div><button class="btn hidden" id="next" data-act="qnext">${Q.i+1<Q.questions.length?'Próxima':'Ver resultado'}</button></div></div>`;
+  if(q.type==='listen')setTimeout(()=>say(q.p[0]),250);
+}
+function answer(k){if(Q.answered)return;Q.answered=true;const q=Q.questions[Q.i],ok=q.options[k]===q.answer;
+  document.querySelectorAll('.opt').forEach((b,j)=>{b.disabled=true;if(q.options[j]===q.answer)b.classList.add('right');else if(j===+k)b.classList.add('wrong')});
+  if(ok)Q.correct++;Q.res.push(ok);
+  document.getElementById('fb').innerHTML=ok?`<span class="good">Correct! ${esc(q.p[0])}</span>`:`<span class="bad">Quase! “${esc(q.p[0])}” significa “${esc(q.p[1])}”.</span>`;
+  say(q.p[0]);const n=document.getElementById('next');n.classList.remove('hidden');n.focus()}
+function nextQ(){Q.i++;Q.answered=false;if(Q.i>=Q.questions.length)finishQuiz();drawQ()}
+function finishQuiz(){
+  const pct=Math.round(Q.correct/Q.questions.length*100);let gain=0;
+  if(Q.mode==='day'){const D=day(Q.date);gain=D.main?2*Q.correct:10+5*Q.correct;D.main=true;D.score=Math.max(D.score||0,pct)}
+  else{const prev=best(Q.id);gain=prev==null?20+5*Q.correct:3*Q.correct;S.tests.push({id:Q.id,date:todayISO(),correct:Q.correct,total:Q.questions.length,pct});
+    const it=SCH.find(x=>x.type==='test'&&x.test===Q.id);if(it){const D=day(it.date);D.main=true;D.score=Math.max(D.score||0,pct)}}
+  S.xp+=gain;Q.gain=gain;[Q.date,(SCH.find(x=>x.test===Q.id)||{}).date].filter(Boolean).forEach(checkBonus);save();render();
+}
+function checkBonus(s){const D=S.days[s];if(D&&isDone(s)&&!D.bonus){D.bonus=true;S.xp+=20;window._pop=s;setTimeout(()=>toast('Dia completo! +20 XP de bônus 🎉'),300)}}
+function startQuiz(b){
+  const kind=b.dataset.kind,d=b.dataset.d||todayISO(),w=b.dataset.w!=null?+b.dataset.w:null;
+  if(kind==='lesson'){const l=LESSONS[+b.dataset.li];openQuiz({mode:'day',date:d,title:`Aula ${+b.dataset.li+1}: ${l.t}`,questions:makeQuestions(l.p,6,ALL_TRIP),src:b});return}
+  if(kind==='review'){const pool=coveredTrip().flatMap(l=>l.p);openQuiz({mode:'day',date:d,title:'Revisão geral',questions:makeQuestions(pool.length?pool:ALL_TRIP,12,ALL_TRIP),src:b});return}
+  if(kind==='caweek'){openQuiz({mode:'day',date:d,title:`Semana ${w+1}: exercício`,questions:makeQuestions(weekItems(w),+b.dataset.n||6,ALL_CA),src:b});return}
+  if(kind==='careview'){const prev=CUR.slice(0,w).flatMap((_,i)=>weekItems(i));const qs=makeQuestions(weekItems(w),prev.length?6:10,ALL_CA).concat(prev.length?makeQuestions(prev,4,ALL_CA):[]);
+    openQuiz({mode:'day',date:d,title:'Revisão da semana',questions:shuffle(qs),src:b});return}
+  const id=b.dataset.id;
+  if(kind==='test'){let pool=ALL_TRIP,n=15;if(id==='final')n=20;else if(id==='practice'){const c=coveredTrip();pool=(c.length?c:LESSONS.slice(0,1)).flatMap(l=>l.p);n=10}
+    else if(id[0]==='w'){const ww=+id.slice(1),wk=LESSONS.filter(l=>l.w===ww).flatMap(l=>l.p),prev=LESSONS.filter(l=>l.w<ww).flatMap(l=>l.p);
+      openQuiz({mode:'test',id,date:d,title:testName(id),questions:shuffle(makeQuestions(wk,prev.length?9:12,ALL_TRIP).concat(prev.length?makeQuestions(prev,3,ALL_TRIP):[])),src:b});return}
+    openQuiz({mode:'test',id,date:d,title:testName(id),questions:makeQuestions(pool,n,ALL_TRIP),src:b});return}
+  let pool,n;
+  if(id==='cdiag'){pool=ALL_CA;n=20}else if(id==='cfinal'){pool=ALL_CA;n=30}
+  else if(id==='cpractice'){pool=CUR.slice(0,caWeeksReached()).flatMap((_,i)=>weekItems(i));n=10}
+  else if(id.startsWith('cp')){const p=PHASES[+id.slice(2)];pool=CUR.slice(p.s,p.e).flatMap((_,i)=>weekItems(p.s+i));n=25}
+  else if(id.startsWith('cm')){const ww=+id.slice(2);pool=CUR.slice(0,ww+1).flatMap((_,i)=>weekItems(i));n=20}
+  else{const ww=+id.slice(2),prev=CUR.slice(0,ww).flatMap((_,i)=>weekItems(i));
+    openQuiz({mode:'test',id,date:d,title:testName(id),questions:shuffle(makeQuestions(weekItems(ww),prev.length?8:12,ALL_CA).concat(prev.length?makeQuestions(prev,4,ALL_CA):[])),src:b});return}
+  openQuiz({mode:'test',id,date:d,title:testName(id),questions:makeQuestions(pool,n,ALL_CA),src:b});
+}
+
+/* ================= Escrita ================= */
+const WCACHE={};
+const wKey=d=>'ingles-writing-'+d;
+function countWords(t){return (t.trim().match(/\S+/g)||[]).length}
+async function loadWriting(d){
+  const ta=document.getElementById('wtext');if(!ta)return;
+  let w=WCACHE[d];if(!w){try{w=JSON.parse(localStorage.getItem(wKey(d))||'null')}catch(e){}}
+  if(!w&&docBase){try{const s=await DB.doc(docBase+'w-'+d).get();if(s.exists)w=JSON.parse(JSON.stringify(s.data()))}catch(e){}}
+  w=w||{text:'',fb:''};WCACHE[d]=w;
+  const ta2=document.getElementById('wtext');if(!ta2||ta2.dataset.d!==d)return;
+  if(!ta2.value)ta2.value=w.text||'';document.getElementById('wcount').textContent=countWords(ta2.value)+' palavras';
+  if(w.fb)document.getElementById('wfb').innerHTML=`<div class="fbtext">${esc(w.fb)}</div>`;
+  if(!sampleOk)document.getElementById('wfixbtn').classList.add('hidden');
+}
+function storeWriting(d,patch){const w=Object.assign(WCACHE[d]||{text:'',fb:''},patch);WCACHE[d]=w;
+  try{localStorage.setItem(wKey(d),JSON.stringify(w))}catch(e){}
+  if(docBase)DB.doc(docBase+'w-'+d).set(JSON.parse(JSON.stringify(w))).catch(()=>{})}
+function saveWriting(d,quiet){const ta=document.getElementById('wtext');if(!ta)return;const text=ta.value.slice(0,6000);storeWriting(d,{text});
+  if(countWords(text)>=5){const D=day(d);const first=!D.wdone;D.wdone=true;if(!D.main){D.main=true;S.xp+=30}else if(first)S.xp+=10;checkBonus(d);save();if(!quiet){toast('Texto salvo! +30 XP ✍️');render()}}
+  else if(!quiet)toast('Escreva pelo menos algumas frases antes de salvar.')}
+async function fixWriting(d,w){
+  const ta=document.getElementById('wtext');if(!ta||countWords(ta.value)<5){toast('Escreva o texto primeiro. Depois peça a correção.');return}
+  saveWriting(d,true);const c=CUR[w],ph=PHASES[phaseOf(w)],ielts=w>=44;
+  const box=document.getElementById('wfb'),btn=document.getElementById('wfixbtn');btn.disabled=true;btn.textContent='Corrigindo…';
+  box.innerHTML='<div class="fbtext" id="fbt">Lendo o seu texto…</div>';
+  const prompt=`Você é uma professora de inglês experiente, gentil e direta. Sua aluna é brasileira, nível aproximado ${ph.lvl}, e está se preparando para trabalhar no Canadá e fazer o IELTS General Training.
+Tarefa proposta: "${c.wp}"
+Texto da aluna:
+"""
+${ta.value.slice(0,6000)}
+"""
+Responda em português do Brasil, em texto simples (sem markdown, sem asteriscos, sem tabelas), nesta ordem:
+1. Um elogio específico (1 frase).
+2. Correções: até 8 erros, um por linha, no formato: "trecho original" → "trecho corrigido" (explicação curta).
+3. Versão melhorada do texto, em inglês, mantendo as ideias dela e um nível um pouco acima do atual.
+4. Três dicas práticas para o próximo texto.${ielts?'\n5. Estimativa de banda IELTS por critério (Task Achievement/Response, Coherence and Cohesion, Lexical Resource, Grammatical Range and Accuracy) e banda geral, deixando claro que é uma estimativa.':''}
+Seja encorajadora: ela está evoluindo.`;
+  try{const r=await SAMPLE(prompt,{onText:({text})=>{const el=document.getElementById('fbt');if(el)el.textContent=text}});
+    storeWriting(d,{fb:(r.text||'').slice(0,8000)});const D=day(d);if(!D.fixed){D.fixed=true;S.xp+=10;save()}toast('Correção pronta! +10 XP');
+    const el=document.getElementById('fbt');if(el)el.textContent=r.text;
+  }catch(e){const map={not_granted:'A correção precisa da sua permissão. Toque no botão de novo e aceite o pedido do Claude.',rate_limited:'Muitos pedidos seguidos. Espere alguns minutos e tente de novo.',cancelled:'Correção cancelada.'};
+    const el=document.getElementById('fbt');if(el)el.textContent=map[e&&e.code]||'Não consegui corrigir agora. Seu texto está salvo; tente de novo mais tarde.'}
+  const b2=document.getElementById('wfixbtn');if(b2){b2.disabled=false;b2.textContent='Corrigir com o Claude'}
+}
+
+/* ================= Timer de fala ================= */
+let tmr=null;
+function startTimer(sec){clearInterval(tmr);const el=document.getElementById('timer');if(!el)return;if(!sec){el.textContent='0:00';return}
+  let left=sec;const draw=()=>{el.textContent=`${Math.floor(left/60)}:${pad(left%60)}`};draw();
+  tmr=setInterval(()=>{left--;const e2=document.getElementById('timer');if(!e2){clearInterval(tmr);return}if(left<=0){clearInterval(tmr);e2.textContent='Tempo! 🎉';toast('Tempo esgotado. Muito bem por falar até o fim!');return}draw()},1000)}
+
+/* ================= Nuvem (conta Claude) ================= */
+let DB=null,docBase=null,pushT=null,cloudState='wait',SAMPLE=null,sampleOk=false;
+async function initCloud(){
+  if(!window.claude||typeof window.claude.use!=='function'){cloudState='off';render();return}
+  window.claude.use('sample').then(s=>{SAMPLE=s;sampleOk=!!s;const b=document.getElementById('wfixbtn');if(b)b.classList.toggle('hidden',!s)}).catch(()=>{});
+  try{const [db,user]=await Promise.all([window.claude.use('db'),window.claude.use('user')]);const id=user?await user.id():null;
+    if(!db||!id){cloudState='off';render();return}
+    DB=db;docBase='data/users/'+id+'/';const ref=db.doc(docBase+'progress'),snap=await ref.get();
+    if(snap.exists){const r=JSON.parse(JSON.stringify(snap.data()));
+      if((r.updatedAt||0)>(S.updatedAt||0)){S=norm(r);try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}rebuild()}
+      else if((r.updatedAt||0)<(S.updatedAt||0))cloudPush(true)}
+    else if(S.updatedAt)cloudPush(true);
+    cloudState='on'}catch(e){cloudState='err'}
+  render();
+}
+function cloudPush(now){if(!DB)return;clearTimeout(pushT);pushT=setTimeout(()=>DB.doc(docBase+'progress').set(JSON.parse(JSON.stringify(S))).catch(()=>toast('Não salvou na nuvem agora. O progresso continua salvo neste aparelho.')),now?0:800)}
+function cloudPanel(){
+  if(cloudState==='on')return '<p class="small">Salvo na sua conta Claude. Abra este mesmo link logada no celular ou no computador e o progresso aparece igual nos dois.</p>';
+  if(cloudState==='wait')return '<p class="muted small">Conectando…</p>';
+  if(cloudState==='err')return '<p class="bad small">Não consegui conectar à nuvem agora. O progresso continua salvo neste aparelho; recarregue a página mais tarde.</p>';
+  return '<p class="muted small">O progresso está salvo neste navegador. Para sincronizar entre aparelhos, abra o app pelo link do Claude estando logada.</p>';
+}
+
+/* ================= Eventos ================= */
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-act]');if(!b)return;const a=b.dataset.act;
+  if(a==='view'){view=b.dataset.v;if(view==='hoje')selDate=null;render();scrollTo(0,0)}
+  else if(a==='open'){selDate=b.dataset.d;view='hoje';render();scrollTo(0,0)}
+  else if(a==='plan'){planTrack=b.dataset.t;planPhase=null;view='plano';render()}
+  else if(a==='phase'){planPhase=+b.dataset.p;render()}
+  else if(a==='cont'){contTrack=b.dataset.t;view='conteudo';render();scrollTo(0,0)}
+  else if(a==='say')say(b.dataset.t,!!b.dataset.slow);
+  else if(a==='toggle'){const D=day(b.dataset.d),k=b.dataset.k;D[k]=!D[k];S.xp=Math.max(0,S.xp+(D[k]?10:-10));if(D[k])toast(k==='duo'?'Duolingo feito! +10 XP 🦉':'Podcast ouvido! +10 XP 🎧',2200);checkBonus(b.dataset.d);save();render()}
+  else if(a==='markmain'){const D=day(b.dataset.d);if(!D.main){D.main=true;S.xp+=20;toast('Feito! +20 XP');checkBonus(b.dataset.d);save();render()}}
+  else if(a==='timer')startTimer(+b.dataset.s);
+  else if(a==='wsave')saveWriting(b.dataset.d);
+  else if(a==='wfix')fixWriting(b.dataset.d,+b.dataset.w);
+  else if(a==='quiz')startQuiz(b);
+  else if(a==='ans')answer(b.dataset.k);
+  else if(a==='qnext')nextQ();
+  else if(a==='qclose')closeQuiz();
+  else if(a==='qretry'){const src=Q.src;closeQuiz();startQuiz(src)}
+  else if(a==='ieltsadd'){const g=id=>+document.getElementById(id).value;const r={date:todayISO(),L:g('iL'),R:g('iR'),W:g('iW'),S:g('iS'),src:document.getElementById('iSrc').value.trim().slice(0,80)};r.overall=ieltsOverall(r);S.ielts.push(r);S.xp+=40;save();render();toast(`Simulado salvo: banda ${r.overall}. +40 XP`)}
+  else if(a==='ieltsdel'){if(confirm('Apagar este simulado?')){S.ielts.splice(+b.dataset.i,1);save();render()}}
+  else if(a==='reset'){if(confirm('Zerar todo o progresso? Esta ação não pode ser desfeita.')){const cfg=S.cfg;S=blank();S.cfg=cfg;rebuild();save();render();toast('Progresso zerado. Um novo começo!')}}
+});
+document.addEventListener('change',e=>{
+  const el=e.target,f=el.dataset.field;
+  if(el.id==='wtext'){storeWriting(el.dataset.d,{text:el.value.slice(0,6000)});return}
+  if(!f)return;
+  if(f.startsWith('cfg.')){const k=f.slice(4);let v=el.value.trim();
+    if(k==='trip'||k==='canStart'){if(!/^\d{4}-\d{2}-\d{2}$/.test(v))return}
+    if(k==='target'){v=Math.min(9,Math.max(4,Math.round((+v||6.5)*2)/2))}
+    S.cfg[k]=v;
+    if(S.cfg.canStart<=S.cfg.trip){S.cfg.canStart=addDays(S.cfg.trip,1);toast('A trilha Canadá precisa começar depois da viagem. Ajustei a data.')}
+    if(k==='trip'||k==='canStart')rebuild();save();render();return}
+  const D=day(el.dataset.d);D[f]=f==='duoXp'?(el.value===''?'':Math.max(0,+el.value||0)):el.value.slice(0,1000);save();
+});
+document.addEventListener('input',e=>{
+  if(e.target.id==='wtext'){const c=document.getElementById('wcount');if(c)c.textContent=countWords(e.target.value)+' palavras';return}
+  if(e.target.id!=='q')return;const q=e.target.value.trim().toLowerCase();
+  document.querySelectorAll('.phrase').forEach(p=>p.classList.toggle('hidden',!!q&&!p.dataset.s.includes(q)));
+  document.querySelectorAll('.group').forEach(g=>{const has=!!g.querySelector('.phrase:not(.hidden)');g.classList.toggle('hidden',!has);if(q&&has&&g.tagName==='DETAILS')g.open=true});
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&Q)closeQuiz()});
+
+rebuild();render();initCloud();
+</script>
+</body>
+</html>
